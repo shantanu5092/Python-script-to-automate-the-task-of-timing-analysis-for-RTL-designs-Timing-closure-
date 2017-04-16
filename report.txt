@@ -1,0 +1,2409 @@
+DC Professional (TM)
+                           DC Expert (TM)
+                            DC Ultra (TM)
+                       FloorPlan Manager (TM)
+                          HDL Compiler (TM)
+                         VHDL Compiler (TM)
+                        Library Compiler (TM)
+                      DesignWare Developer (TM)
+                          DFT Compiler (TM)
+                            BSD Compiler
+                         Power Compiler (TM)
+
+           Version C-2009.06-SP5 for linux -- Jan 15, 2010
+              Copyright (c) 1988-2009 by Synopsys, Inc.
+                         ALL RIGHTS RESERVED
+
+This software and the associated documentation are confidential and 
+proprietary to Synopsys, Inc. Your use or disclosure of this software 
+is subject to the terms and conditions of a written license agreement 
+between you, or your company, and Synopsys, Inc.
+
+The above trademark notice does not imply that you are licensed to use 
+all of the listed products. You are licensed to use only those products 
+for which you have lawfully obtained a valid license key.
+
+Initializing...
+set search_path {/export/apps/toshiba/sjsu/synopsys/tc240c/}
+
+/export/apps/toshiba/sjsu/synopsys/tc240c/
+set link_library {/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_WCCOM25}
+
+/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_WCCOM25
+set target_library {/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_WCCOM25}
+
+/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_WCCOM25
+set symbol_library {/apps/toshiba/sjsu/synopsys/tc240c/tc240c.workview.sdb}
+
+/apps/toshiba/sjsu/synopsys/tc240c/tc240c.workview.sdb
+set synthetic_library {dw_foundation.sldb standard.sldb}
+
+dw_foundation.sldb standard.sldb
+set_min_library /apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_WCCOM25 -min_version /apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_BCCOM25
+
+Loading db file '/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_WCCOM25'
+Loading db file '/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_BCCOM25'
+Warning: Function '=' leaked 1 allocations for 16 bytes. (EQN-21)
+1
+read_verilog ./rca_64bit.v
+
+Loading db file '/apps/synopsys/SYNTH/libraries/syn/gtech.db'
+Loading db file '/apps/synopsys/SYNTH/libraries/syn/standard.sldb'
+  Loading link library 'tc240c'
+  Loading link library 'gtech'
+Loading verilog file '/home/va/vash8900/Desktop/final_project/rca_main/pre_synthesis/rca_64bit.v'
+Detecting input file type automatically (-rtl or -netlist).
+Running DC verilog reader
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Loading db file '/apps/synopsys/SYNTH/libraries/syn/dw_foundation.sldb'
+Warning: The following synthetic libraries should be added to 
+	the list of link libraries: 
+	'dw_foundation.sldb'. (UISN-26)
+Compiling source file /home/va/vash8900/Desktop/final_project/rca_main/pre_synthesis/rca_64bit.v
+$display output: op1=????????????????
+$display output: op2=????????????????
+$display output: sum=????????????????
+$display output: crout=?
+
+Inferred memory devices in process
+	in routine rca_64bit line 58 in file
+		'/home/va/vash8900/Desktop/final_project/rca_main/pre_synthesis/rca_64bit.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       sum_reg       | Flip-flop |  64   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      crout_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|        b_reg        | Flip-flop |  64   |  Y  | N  | Y  | N  | N  | N  | N  |
+|        a_reg        | Flip-flop |  64   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/home/va/vash8900/Desktop/final_project/rca_main/pre_synthesis/half_adder.db:half_adder'
+Loaded 5 designs.
+Current design is 'half_adder'.
+half_adder full_adder four_1bit four_0bit rca_64bit
+analyze  -format verilog {./rca_64bit.v}
+
+Running PRESTO HDLC
+Compiling source file ./rca_64bit.v
+Presto compilation completed successfully.
+1
+elaborate  rca_64bit
+
+Running PRESTO HDLC
+$display output: op1=????????????????
+$display output: op2=????????????????
+$display output: sum=????????????????
+$display output: crout=?
+
+Inferred memory devices in process
+	in routine rca_64bit line 58 in file
+		'./rca_64bit.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       sum_reg       | Flip-flop |  64   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      crout_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|        b_reg        | Flip-flop |  64   |  Y  | N  | Y  | N  | N  | N  | N  |
+|        a_reg        | Flip-flop |  64   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Warning: Overwriting design file '/home/va/vash8900/Desktop/final_project/rca_main/pre_synthesis/rca_64bit.db'. (DDB-24)
+Elaborated 1 design.
+Current design is now 'rca_64bit'.
+1
+current_design rca_64bit
+
+Current design is 'rca_64bit'.
+{rca_64bit}
+check_design 
+
+Information: Design 'rca_64bit' has multiply instantiated designs. Use the '-multiple_designs' switch for more information. (LINT-78)
+1
+create_clock clock -name clock -period 12.04
+
+1
+set_clock_uncertainty 0.25 clock
+
+1
+set_propagated_clock clock
+
+Information: set_input_delay values are added to the propagated clock skew. (TIM-113)
+1
+set_dont_touch_network [all_clocks]
+
+1
+set_fix_hold clock
+
+1
+compile -incremental_mapping
+
+Warning: The following synthetic libraries should be added to 
+	the list of link libraries: 
+	'dw_foundation.sldb'. (UISN-26)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library       |      Version       | Available |
+============================================================================
+| Basic DW Building Blocks                | C-2009.06-DWBB_0912 |    *     |
+| Licensed DW Building Blocks             | C-2009.06-DWBB_0912 |          |
+============================================================================
+
+
+Warning: Operating condition WCCOM25 set on design rca_64bit has different process,
+voltage and temperatures parameters than the parameters at which target library 
+tc240c is characterized. Delays may be inaccurate as a result. (OPT-998)
+
+  Beginning Pass 1 Mapping  (Incremental)
+  ------------------------
+  Processing 'full_adder_0'
+  Processing 'half_adder'
+  Processing 'rca_64bit'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: Input delay ('fall') on clock port 'clock' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('rise') on clock port 'clock' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('fall') on clock port 'clock' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('rise') on clock port 'clock' will be added to the clock's propagated skew. (TIM-112)
+
+  Beginning Mapping Optimizations  (Medium effort)  (Incremental)
+  -------------------------------
+
+  Beginning Incremental Implementation Selection
+  ----------------------------------------------
+Information: Input delay ('fall') on clock port 'clock' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('rise') on clock port 'clock' will be added to the clock's propagated skew. (TIM-112)
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+   ELAPSED            WORST NEG TOTAL NEG  DESIGN                             MIN DELAY
+    TIME      AREA      SLACK     SLACK   RULE COST         ENDPOINT            COST   
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:01    1764.0     11.44     202.3       0.0                                0.00
+    0:00:02    1936.0      5.06      53.9       0.0 crout_reg/D                    0.00
+    0:00:03    2056.0      2.73      23.5       0.0 sum_reg[63]/D                  0.00
+    0:00:03    2106.0      1.97      14.1       0.0 sum_reg[63]/D                  0.00
+    0:00:03    2231.0      0.63       2.8       0.0 sum_reg[63]/D                  0.00
+    0:00:04    2259.5      0.32       1.3       0.0 sum_reg[63]/D                  0.00
+    0:00:04    2327.5      0.23       0.9       0.0 sum_reg[63]/D                  0.00
+    0:00:04    2314.5      0.16       0.5       0.0 sum_reg[63]/D                  0.00
+    0:00:05    2329.0      0.12       0.5       0.0 sum_reg[63]/D                  0.00
+    0:00:05    2334.5      0.05       0.1       0.0 sum_reg[63]/D                  0.00
+    0:00:05    2335.0      0.04       0.1       0.0 sum_reg[63]/D                  0.00
+    0:00:06    2335.5      0.03       0.1       0.0 sum_reg[63]/D                  0.00
+Information: Input delay ('fall') on clock port 'clock' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('rise') on clock port 'clock' will be added to the clock's propagated skew. (TIM-112)
+    0:00:07    2334.0      0.00       0.0       0.0                              -92.24
+
+
+  Beginning Design Rule Fixing  (min_path)
+  ----------------------------
+
+   ELAPSED            WORST NEG TOTAL NEG  DESIGN                             MIN DELAY
+    TIME      AREA      SLACK     SLACK   RULE COST         ENDPOINT            COST   
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:07    2334.0      0.00       0.0       0.0                              -92.24
+    0:00:08    2912.0      0.00       0.0       0.0                                0.00
+Loading db file '/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_BCCOM25'
+Loading db file '/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_WCCOM25'
+
+  Optimization Complete
+  ---------------------
+1
+report -cell
+
+report_cell
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : cell
+Design : rca_64bit
+Version: C-2009.06-SP5
+Date   : Sat Dec  5 01:19:21 2015
+****************************************
+
+Attributes:
+    b - black box (unknown)
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    u - contains unmapped logic
+
+Cell                      Reference       Library             Area  Attributes
+--------------------------------------------------------------------------------
+U3                        CDLY1XL         tc240c          3.500000  
+U4                        CNIVX1          tc240c          1.000000  
+U5                        CDLY1XL         tc240c          3.500000  
+U6                        CNIVX1          tc240c          1.000000  
+U7                        CDLY1XL         tc240c          3.500000  
+U8                        CNIVX1          tc240c          1.000000  
+U9                        CDLY1XL         tc240c          3.500000  
+U10                       CNIVX1          tc240c          1.000000  
+U11                       CDLY1XL         tc240c          3.500000  
+U12                       CNIVX1          tc240c          1.000000  
+U13                       CDLY1XL         tc240c          3.500000  
+U14                       CNIVX1          tc240c          1.000000  
+U15                       CDLY1XL         tc240c          3.500000  
+U16                       CNIVX1          tc240c          1.000000  
+U17                       CDLY1XL         tc240c          3.500000  
+U18                       CNIVX1          tc240c          1.000000  
+U19                       CDLY1XL         tc240c          3.500000  
+U20                       CNIVX1          tc240c          1.000000  
+U21                       CDLY1XL         tc240c          3.500000  
+U22                       CNIVX1          tc240c          1.000000  
+U23                       CDLY1XL         tc240c          3.500000  
+U24                       CNIVX1          tc240c          1.000000  
+U25                       CDLY1XL         tc240c          3.500000  
+U26                       CNIVX1          tc240c          1.000000  
+U27                       CDLY1XL         tc240c          3.500000  
+U28                       CNIVX1          tc240c          1.000000  
+U29                       CDLY1XL         tc240c          3.500000  
+U30                       CNIVX1          tc240c          1.000000  
+U31                       CDLY1XL         tc240c          3.500000  
+U32                       CNIVX1          tc240c          1.000000  
+U33                       CDLY1XL         tc240c          3.500000  
+U34                       CNIVX1          tc240c          1.000000  
+U35                       CDLY1XL         tc240c          3.500000  
+U36                       CNIVX1          tc240c          1.000000  
+U37                       CDLY1XL         tc240c          3.500000  
+U38                       CNIVX1          tc240c          1.000000  
+U39                       CDLY1XL         tc240c          3.500000  
+U40                       CNIVX1          tc240c          1.000000  
+U41                       CDLY1XL         tc240c          3.500000  
+U42                       CNIVX1          tc240c          1.000000  
+U43                       CDLY1XL         tc240c          3.500000  
+U44                       CNIVX1          tc240c          1.000000  
+U45                       CDLY1XL         tc240c          3.500000  
+U46                       CNIVX1          tc240c          1.000000  
+U47                       CDLY1XL         tc240c          3.500000  
+U48                       CNIVX1          tc240c          1.000000  
+U49                       CDLY1XL         tc240c          3.500000  
+U50                       CNIVX1          tc240c          1.000000  
+U51                       CDLY1XL         tc240c          3.500000  
+U52                       CNIVX1          tc240c          1.000000  
+U53                       CDLY1XL         tc240c          3.500000  
+U54                       CNIVX1          tc240c          1.000000  
+U55                       CDLY1XL         tc240c          3.500000  
+U56                       CNIVX1          tc240c          1.000000  
+U57                       CDLY1XL         tc240c          3.500000  
+U58                       CNIVX1          tc240c          1.000000  
+U59                       CDLY1XL         tc240c          3.500000  
+U60                       CNIVX1          tc240c          1.000000  
+U61                       CDLY1XL         tc240c          3.500000  
+U62                       CNIVX1          tc240c          1.000000  
+U63                       CDLY1XL         tc240c          3.500000  
+U64                       CNIVX1          tc240c          1.000000  
+U65                       CDLY1XL         tc240c          3.500000  
+U66                       CNIVX1          tc240c          1.000000  
+U67                       CDLY1XL         tc240c          3.500000  
+U68                       CNIVX1          tc240c          1.000000  
+U69                       CDLY1XL         tc240c          3.500000  
+U70                       CNIVX1          tc240c          1.000000  
+U71                       CDLY1XL         tc240c          3.500000  
+U72                       CNIVX1          tc240c          1.000000  
+U73                       CDLY1XL         tc240c          3.500000  
+U74                       CNIVX1          tc240c          1.000000  
+U75                       CDLY1XL         tc240c          3.500000  
+U76                       CNIVX1          tc240c          1.000000  
+U77                       CDLY1XL         tc240c          3.500000  
+U78                       CNIVX1          tc240c          1.000000  
+U79                       CDLY1XL         tc240c          3.500000  
+U80                       CNIVX1          tc240c          1.000000  
+U81                       CDLY1XL         tc240c          3.500000  
+U82                       CNIVX1          tc240c          1.000000  
+U83                       CDLY1XL         tc240c          3.500000  
+U84                       CNIVX1          tc240c          1.000000  
+U85                       CDLY1XL         tc240c          3.500000  
+U86                       CNIVX1          tc240c          1.000000  
+U87                       CDLY1XL         tc240c          3.500000  
+U88                       CNIVX1          tc240c          1.000000  
+U89                       CDLY1XL         tc240c          3.500000  
+U90                       CNIVX1          tc240c          1.000000  
+U91                       CDLY1XL         tc240c          3.500000  
+U92                       CNIVX1          tc240c          1.000000  
+U93                       CDLY1XL         tc240c          3.500000  
+U94                       CNIVX1          tc240c          1.000000  
+U95                       CDLY1XL         tc240c          3.500000  
+U96                       CNIVX1          tc240c          1.000000  
+U97                       CDLY1XL         tc240c          3.500000  
+U98                       CNIVX1          tc240c          1.000000  
+U99                       CDLY1XL         tc240c          3.500000  
+U100                      CNIVX1          tc240c          1.000000  
+U101                      CDLY1XL         tc240c          3.500000  
+U102                      CNIVX1          tc240c          1.000000  
+U103                      CDLY1XL         tc240c          3.500000  
+U104                      CNIVX1          tc240c          1.000000  
+U105                      CDLY1XL         tc240c          3.500000  
+U106                      CNIVX1          tc240c          1.000000  
+U107                      CDLY1XL         tc240c          3.500000  
+U108                      CNIVX1          tc240c          1.000000  
+U109                      CDLY1XL         tc240c          3.500000  
+U110                      CNIVX1          tc240c          1.000000  
+U111                      CDLY1XL         tc240c          3.500000  
+U112                      CNIVX1          tc240c          1.000000  
+U113                      CDLY1XL         tc240c          3.500000  
+U114                      CNIVX1          tc240c          1.000000  
+U115                      CDLY1XL         tc240c          3.500000  
+U116                      CNIVX1          tc240c          1.000000  
+U117                      CDLY1XL         tc240c          3.500000  
+U118                      CNIVX1          tc240c          1.000000  
+U119                      CDLY1XL         tc240c          3.500000  
+U120                      CNIVX1          tc240c          1.000000  
+U121                      CDLY1XL         tc240c          3.500000  
+U122                      CNIVX1          tc240c          1.000000  
+U123                      CDLY1XL         tc240c          3.500000  
+U124                      CNIVX1          tc240c          1.000000  
+U125                      CDLY1XL         tc240c          3.500000  
+U126                      CNIVX1          tc240c          1.000000  
+U127                      CDLY1XL         tc240c          3.500000  
+U128                      CNIVX1          tc240c          1.000000  
+U129                      CDLY1XL         tc240c          3.500000  
+U130                      CNIVX1          tc240c          1.000000  
+U131                      CDLY1XL         tc240c          3.500000  
+U132                      CNIVX1          tc240c          1.000000  
+U133                      CDLY1XL         tc240c          3.500000  
+U134                      CNIVX1          tc240c          1.000000  
+U135                      CDLY1XL         tc240c          3.500000  
+U136                      CNIVX1          tc240c          1.000000  
+U137                      CDLY1XL         tc240c          3.500000  
+U138                      CNIVX1          tc240c          1.000000  
+U139                      CDLY1XL         tc240c          3.500000  
+U140                      CNIVX1          tc240c          1.000000  
+U141                      CDLY1XL         tc240c          3.500000  
+U142                      CNIVX1          tc240c          1.000000  
+U143                      CDLY1XL         tc240c          3.500000  
+U144                      CNIVX1          tc240c          1.000000  
+U145                      CDLY1XL         tc240c          3.500000  
+U146                      CNIVX1          tc240c          1.000000  
+U147                      CDLY1XL         tc240c          3.500000  
+U148                      CNIVX1          tc240c          1.000000  
+U149                      CDLY1XL         tc240c          3.500000  
+U150                      CNIVX1          tc240c          1.000000  
+U151                      CDLY1XL         tc240c          3.500000  
+U152                      CNIVX1          tc240c          1.000000  
+U153                      CDLY1XL         tc240c          3.500000  
+U154                      CNIVX1          tc240c          1.000000  
+U155                      CDLY1XL         tc240c          3.500000  
+U156                      CNIVX1          tc240c          1.000000  
+U157                      CDLY1XL         tc240c          3.500000  
+U158                      CNIVX1          tc240c          1.000000  
+U159                      CDLY1XL         tc240c          3.500000  
+U160                      CNIVX1          tc240c          1.000000  
+U161                      CDLY1XL         tc240c          3.500000  
+U162                      CNIVX1          tc240c          1.000000  
+U163                      CDLY1XL         tc240c          3.500000  
+U164                      CNIVX1          tc240c          1.000000  
+U165                      CDLY1XL         tc240c          3.500000  
+U166                      CNIVX1          tc240c          1.000000  
+U167                      CDLY1XL         tc240c          3.500000  
+U168                      CNIVX1          tc240c          1.000000  
+U169                      CDLY1XL         tc240c          3.500000  
+U170                      CNIVX1          tc240c          1.000000  
+U171                      CDLY1XL         tc240c          3.500000  
+U172                      CNIVX1          tc240c          1.000000  
+U173                      CDLY1XL         tc240c          3.500000  
+U174                      CNIVX1          tc240c          1.000000  
+U175                      CDLY1XL         tc240c          3.500000  
+U176                      CNIVX1          tc240c          1.000000  
+U177                      CDLY1XL         tc240c          3.500000  
+U178                      CNIVX1          tc240c          1.000000  
+U179                      CDLY1XL         tc240c          3.500000  
+U180                      CNIVX1          tc240c          1.000000  
+U181                      CDLY1XL         tc240c          3.500000  
+U182                      CNIVX1          tc240c          1.000000  
+U183                      CDLY1XL         tc240c          3.500000  
+U184                      CNIVX1          tc240c          1.000000  
+U185                      CDLY1XL         tc240c          3.500000  
+U186                      CNIVX1          tc240c          1.000000  
+U187                      CDLY1XL         tc240c          3.500000  
+U188                      CNIVX1          tc240c          1.000000  
+U189                      CDLY1XL         tc240c          3.500000  
+U190                      CNIVX1          tc240c          1.000000  
+U191                      CDLY1XL         tc240c          3.500000  
+U192                      CNIVX1          tc240c          1.000000  
+U193                      CDLY1XL         tc240c          3.500000  
+U194                      CNIVX1          tc240c          1.000000  
+U195                      CDLY1XL         tc240c          3.500000  
+U196                      CNIVX1          tc240c          1.000000  
+U197                      CDLY1XL         tc240c          3.500000  
+U198                      CNIVX1          tc240c          1.000000  
+U199                      CDLY1XL         tc240c          3.500000  
+U200                      CNIVX1          tc240c          1.000000  
+U201                      CDLY1XL         tc240c          3.500000  
+U202                      CNIVX1          tc240c          1.000000  
+U203                      CDLY1XL         tc240c          3.500000  
+U204                      CNIVX1          tc240c          1.000000  
+U205                      CDLY1XL         tc240c          3.500000  
+U206                      CNIVX1          tc240c          1.000000  
+U207                      CDLY1XL         tc240c          3.500000  
+U208                      CNIVX1          tc240c          1.000000  
+U209                      CDLY1XL         tc240c          3.500000  
+U210                      CNIVX1          tc240c          1.000000  
+U211                      CDLY1XL         tc240c          3.500000  
+U212                      CNIVX1          tc240c          1.000000  
+U213                      CDLY1XL         tc240c          3.500000  
+U214                      CNIVX1          tc240c          1.000000  
+U215                      CDLY1XL         tc240c          3.500000  
+U216                      CNIVX1          tc240c          1.000000  
+U217                      CDLY1XL         tc240c          3.500000  
+U218                      CNIVX1          tc240c          1.000000  
+U219                      CDLY1XL         tc240c          3.500000  
+U220                      CNIVX1          tc240c          1.000000  
+U221                      CDLY1XL         tc240c          3.500000  
+U222                      CNIVX1          tc240c          1.000000  
+U223                      CDLY1XL         tc240c          3.500000  
+U224                      CNIVX1          tc240c          1.000000  
+U225                      CDLY1XL         tc240c          3.500000  
+U226                      CNIVX1          tc240c          1.000000  
+U227                      CDLY1XL         tc240c          3.500000  
+U228                      CNIVX1          tc240c          1.000000  
+U229                      CDLY1XL         tc240c          3.500000  
+U230                      CNIVX1          tc240c          1.000000  
+U231                      CDLY1XL         tc240c          3.500000  
+U232                      CNIVX1          tc240c          1.000000  
+U233                      CDLY1XL         tc240c          3.500000  
+U234                      CNIVX1          tc240c          1.000000  
+U235                      CDLY1XL         tc240c          3.500000  
+U236                      CNIVX1          tc240c          1.000000  
+U237                      CDLY1XL         tc240c          3.500000  
+U238                      CNIVX1          tc240c          1.000000  
+U239                      CDLY1XL         tc240c          3.500000  
+U240                      CNIVX1          tc240c          1.000000  
+U241                      CDLY1XL         tc240c          3.500000  
+U242                      CNIVX1          tc240c          1.000000  
+U243                      CDLY1XL         tc240c          3.500000  
+U244                      CNIVX1          tc240c          1.000000  
+U245                      CDLY1XL         tc240c          3.500000  
+U246                      CNIVX1          tc240c          1.000000  
+U247                      CDLY1XL         tc240c          3.500000  
+U248                      CNIVX1          tc240c          1.000000  
+U249                      CDLY1XL         tc240c          3.500000  
+U250                      CNIVX1          tc240c          1.000000  
+U251                      CDLY1XL         tc240c          3.500000  
+U252                      CNIVX1          tc240c          1.000000  
+U253                      CDLY1XL         tc240c          3.500000  
+U254                      CNIVX1          tc240c          1.000000  
+U255                      CDLY1XL         tc240c          3.500000  
+U256                      CNIVX1          tc240c          1.000000  
+U257                      CDLY1XL         tc240c          3.500000  
+U258                      CNIVX1          tc240c          1.000000  
+a_reg[0]                  CFD2QX1         tc240c          7.000000  n
+a_reg[1]                  CFD3QX1         tc240c          8.000000  n
+a_reg[2]                  CFD2QX1         tc240c          7.000000  n
+a_reg[3]                  CFD2QX1         tc240c          7.000000  n
+a_reg[4]                  CFD2QX1         tc240c          7.000000  n
+a_reg[5]                  CFD2QX1         tc240c          7.000000  n
+a_reg[6]                  CFD2QX1         tc240c          7.000000  n
+a_reg[7]                  CFD2QXL         tc240c          5.000000  n
+a_reg[8]                  CFD2QXL         tc240c          5.000000  n
+a_reg[9]                  CFD2QX1         tc240c          7.000000  n
+a_reg[10]                 CFD2QXL         tc240c          5.000000  n
+a_reg[11]                 CFD2QX1         tc240c          7.000000  n
+a_reg[12]                 CFD2QXL         tc240c          5.000000  n
+a_reg[13]                 CFD2QX1         tc240c          7.000000  n
+a_reg[14]                 CFD2QXL         tc240c          5.000000  n
+a_reg[15]                 CFD2QXL         tc240c          5.000000  n
+a_reg[16]                 CFD2QX1         tc240c          7.000000  n
+a_reg[17]                 CFD2QX1         tc240c          7.000000  n
+a_reg[18]                 CFD2QXL         tc240c          5.000000  n
+a_reg[19]                 CFD2QX1         tc240c          7.000000  n
+a_reg[20]                 CFD2QX1         tc240c          7.000000  n
+a_reg[21]                 CFD2QX1         tc240c          7.000000  n
+a_reg[22]                 CFD2QXL         tc240c          5.000000  n
+a_reg[23]                 CFD2QX1         tc240c          7.000000  n
+a_reg[24]                 CFD2QXL         tc240c          5.000000  n
+a_reg[25]                 CFD2QX1         tc240c          7.000000  n
+a_reg[26]                 CFD2QXL         tc240c          5.000000  n
+a_reg[27]                 CFD2QXL         tc240c          5.000000  n
+a_reg[28]                 CFD2QX1         tc240c          7.000000  n
+a_reg[29]                 CFD2QXL         tc240c          5.000000  n
+a_reg[30]                 CFD2QX1         tc240c          7.000000  n
+a_reg[31]                 CFD2QXL         tc240c          5.000000  n
+a_reg[32]                 CFD2QX1         tc240c          7.000000  n
+a_reg[33]                 CFD2QXL         tc240c          5.000000  n
+a_reg[34]                 CFD2QX1         tc240c          7.000000  n
+a_reg[35]                 CFD2QXL         tc240c          5.000000  n
+a_reg[36]                 CFD2QXL         tc240c          5.000000  n
+a_reg[37]                 CFD2QX1         tc240c          7.000000  n
+a_reg[38]                 CFD2QX1         tc240c          7.000000  n
+a_reg[39]                 CFD2QXL         tc240c          5.000000  n
+a_reg[40]                 CFD2QX1         tc240c          7.000000  n
+a_reg[41]                 CFD2QX1         tc240c          7.000000  n
+a_reg[42]                 CFD2QX1         tc240c          7.000000  n
+a_reg[43]                 CFD2QX1         tc240c          7.000000  n
+a_reg[44]                 CFD2QXL         tc240c          5.000000  n
+a_reg[45]                 CFD2QX1         tc240c          7.000000  n
+a_reg[46]                 CFD2QXL         tc240c          5.000000  n
+a_reg[47]                 CFD2QX1         tc240c          7.000000  n
+a_reg[48]                 CFD2QX1         tc240c          7.000000  n
+a_reg[49]                 CFD2QXL         tc240c          5.000000  n
+a_reg[50]                 CFD2QX1         tc240c          7.000000  n
+a_reg[51]                 CFD2QXL         tc240c          5.000000  n
+a_reg[52]                 CFD2QX1         tc240c          7.000000  n
+a_reg[53]                 CFD2QX1         tc240c          7.000000  n
+a_reg[54]                 CFD2QX1         tc240c          7.000000  n
+a_reg[55]                 CFD2QXL         tc240c          5.000000  n
+a_reg[56]                 CFD2QX1         tc240c          7.000000  n
+a_reg[57]                 CFD2QX1         tc240c          7.000000  n
+a_reg[58]                 CFD2QX1         tc240c          7.000000  n
+a_reg[59]                 CFD2QX1         tc240c          7.000000  n
+a_reg[60]                 CFD2QX1         tc240c          7.000000  n
+a_reg[61]                 CFD2QXL         tc240c          5.000000  n
+a_reg[62]                 CFD2QX1         tc240c          7.000000  n
+a_reg[63]                 CFD2QX1         tc240c          7.000000  n
+b_reg[0]                  CFD2QX1         tc240c          7.000000  n
+b_reg[1]                  CFD2QX1         tc240c          7.000000  n
+b_reg[2]                  CFD2QX1         tc240c          7.000000  n
+b_reg[3]                  CFD2QX1         tc240c          7.000000  n
+b_reg[4]                  CFD2QX1         tc240c          7.000000  n
+b_reg[5]                  CFD2QX1         tc240c          7.000000  n
+b_reg[6]                  CFD2QX1         tc240c          7.000000  n
+b_reg[7]                  CFD2QXL         tc240c          5.000000  n
+b_reg[8]                  CFD2QXL         tc240c          5.000000  n
+b_reg[9]                  CFD2QX1         tc240c          7.000000  n
+b_reg[10]                 CFD2QXL         tc240c          5.000000  n
+b_reg[11]                 CFD2QX1         tc240c          7.000000  n
+b_reg[12]                 CFD2QXL         tc240c          5.000000  n
+b_reg[13]                 CFD2QX1         tc240c          7.000000  n
+b_reg[14]                 CFD2QXL         tc240c          5.000000  n
+b_reg[15]                 CFD2QXL         tc240c          5.000000  n
+b_reg[16]                 CFD2QX1         tc240c          7.000000  n
+b_reg[17]                 CFD2QX1         tc240c          7.000000  n
+b_reg[18]                 CFD2QXL         tc240c          5.000000  n
+b_reg[19]                 CFD2QX1         tc240c          7.000000  n
+b_reg[20]                 CFD2QX1         tc240c          7.000000  n
+b_reg[21]                 CFD2QX1         tc240c          7.000000  n
+b_reg[22]                 CFD2QXL         tc240c          5.000000  n
+b_reg[23]                 CFD2QX1         tc240c          7.000000  n
+b_reg[24]                 CFD2QXL         tc240c          5.000000  n
+b_reg[25]                 CFD2QX1         tc240c          7.000000  n
+b_reg[26]                 CFD2QXL         tc240c          5.000000  n
+b_reg[27]                 CFD2QXL         tc240c          5.000000  n
+b_reg[28]                 CFD2QX1         tc240c          7.000000  n
+b_reg[29]                 CFD2QXL         tc240c          5.000000  n
+b_reg[30]                 CFD2QX1         tc240c          7.000000  n
+b_reg[31]                 CFD2QXL         tc240c          5.000000  n
+b_reg[32]                 CFD2QX1         tc240c          7.000000  n
+b_reg[33]                 CFD2QXL         tc240c          5.000000  n
+b_reg[34]                 CFD2QX1         tc240c          7.000000  n
+b_reg[35]                 CFD2QXL         tc240c          5.000000  n
+b_reg[36]                 CFD2QXL         tc240c          5.000000  n
+b_reg[37]                 CFD2QX1         tc240c          7.000000  n
+b_reg[38]                 CFD2QX1         tc240c          7.000000  n
+b_reg[39]                 CFD2QXL         tc240c          5.000000  n
+b_reg[40]                 CFD2QX1         tc240c          7.000000  n
+b_reg[41]                 CFD2QX1         tc240c          7.000000  n
+b_reg[42]                 CFD2QX1         tc240c          7.000000  n
+b_reg[43]                 CFD2QX1         tc240c          7.000000  n
+b_reg[44]                 CFD2QXL         tc240c          5.000000  n
+b_reg[45]                 CFD2QX1         tc240c          7.000000  n
+b_reg[46]                 CFD2QXL         tc240c          5.000000  n
+b_reg[47]                 CFD2QX1         tc240c          7.000000  n
+b_reg[48]                 CFD2QX1         tc240c          7.000000  n
+b_reg[49]                 CFD2QXL         tc240c          5.000000  n
+b_reg[50]                 CFD2QX1         tc240c          7.000000  n
+b_reg[51]                 CFD2QXL         tc240c          5.000000  n
+b_reg[52]                 CFD2QX1         tc240c          7.000000  n
+b_reg[53]                 CFD2QX1         tc240c          7.000000  n
+b_reg[54]                 CFD2QX1         tc240c          7.000000  n
+b_reg[55]                 CFD2QXL         tc240c          5.000000  n
+b_reg[56]                 CFD2QX1         tc240c          7.000000  n
+b_reg[57]                 CFD2QX1         tc240c          7.000000  n
+b_reg[58]                 CFD2QX1         tc240c          7.000000  n
+b_reg[59]                 CFD2QX1         tc240c          7.000000  n
+b_reg[60]                 CFD2QX1         tc240c          7.000000  n
+b_reg[61]                 CFD2QXL         tc240c          5.000000  n
+b_reg[62]                 CFD2QX1         tc240c          7.000000  n
+b_reg[63]                 CFD2QXL         tc240c          5.000000  n
+crout_reg                 CFD2QXL         tc240c          5.000000  n
+fa1                       four_0bit                       50.500000 h
+fa2                       four_1bit_0                     63.500000 h
+fa3                       four_1bit_14                    77.000000 h
+fa4                       four_1bit_13                    91.000000 h
+fa5                       four_1bit_12                    58.000000 h
+fa6                       four_1bit_11                    75.500000 h
+fa7                       four_1bit_10                    92.000000 h
+fa8                       four_1bit_9                     64.500000 h
+fa9                       four_1bit_8                     65.500000 h
+fa10                      four_1bit_7                     84.000000 h
+fa11                      four_1bit_6                     60.000000 h
+fa12                      four_1bit_5                     59.500000 h
+fa13                      four_1bit_4                     66.000000 h
+fa14                      four_1bit_3                     75.500000 h
+fa15                      four_1bit_2                     60.500000 h
+fa16                      four_1bit_1                     68.000000 h
+sum_reg[0]                CFD2QX1         tc240c          7.000000  n
+sum_reg[1]                CFD2QX1         tc240c          7.000000  n
+sum_reg[2]                CFD2QXL         tc240c          5.000000  n
+sum_reg[3]                CFD2QXL         tc240c          5.000000  n
+sum_reg[4]                CFD2QXL         tc240c          5.000000  n
+sum_reg[5]                CFD2QX1         tc240c          7.000000  n
+sum_reg[6]                CFD2QX1         tc240c          7.000000  n
+sum_reg[7]                CFD2QX1         tc240c          7.000000  n
+sum_reg[8]                CFD2QX1         tc240c          7.000000  n
+sum_reg[9]                CFD2QX1         tc240c          7.000000  n
+sum_reg[10]               CFD2QX1         tc240c          7.000000  n
+sum_reg[11]               CFD2QXL         tc240c          5.000000  n
+sum_reg[12]               CFD2QXL         tc240c          5.000000  n
+sum_reg[13]               CFD2QX1         tc240c          7.000000  n
+sum_reg[14]               CFD2QX1         tc240c          7.000000  n
+sum_reg[15]               CFD2QX1         tc240c          7.000000  n
+sum_reg[16]               CFD2QXL         tc240c          5.000000  n
+sum_reg[17]               CFD2QXL         tc240c          5.000000  n
+sum_reg[18]               CFD2QX1         tc240c          7.000000  n
+sum_reg[19]               CFD2QX1         tc240c          7.000000  n
+sum_reg[20]               CFD2QX1         tc240c          7.000000  n
+sum_reg[21]               CFD2QX1         tc240c          7.000000  n
+sum_reg[22]               CFD2QX1         tc240c          7.000000  n
+sum_reg[23]               CFD2QX1         tc240c          7.000000  n
+sum_reg[24]               CFD2QX1         tc240c          7.000000  n
+sum_reg[25]               CFD2QX1         tc240c          7.000000  n
+sum_reg[26]               CFD2QX1         tc240c          7.000000  n
+sum_reg[27]               CFD2QX1         tc240c          7.000000  n
+sum_reg[28]               CFD2QX1         tc240c          7.000000  n
+sum_reg[29]               CFD2QXL         tc240c          5.000000  n
+sum_reg[30]               CFD2QXL         tc240c          5.000000  n
+sum_reg[31]               CFD2QX1         tc240c          7.000000  n
+sum_reg[32]               CFD2QXL         tc240c          5.000000  n
+sum_reg[33]               CFD2QX1         tc240c          7.000000  n
+sum_reg[34]               CFD2QX1         tc240c          7.000000  n
+sum_reg[35]               CFD2QX1         tc240c          7.000000  n
+sum_reg[36]               CFD2QX1         tc240c          7.000000  n
+sum_reg[37]               CFD2QX1         tc240c          7.000000  n
+sum_reg[38]               CFD2QXL         tc240c          5.000000  n
+sum_reg[39]               CFD2QXL         tc240c          5.000000  n
+sum_reg[40]               CFD2QX1         tc240c          7.000000  n
+sum_reg[41]               CFD2QXL         tc240c          5.000000  n
+sum_reg[42]               CFD2QXL         tc240c          5.000000  n
+sum_reg[43]               CFD2QX1         tc240c          7.000000  n
+sum_reg[44]               CFD2QX1         tc240c          7.000000  n
+sum_reg[45]               CFD2QX1         tc240c          7.000000  n
+sum_reg[46]               CFD2QX1         tc240c          7.000000  n
+sum_reg[47]               CFD2QX1         tc240c          7.000000  n
+sum_reg[48]               CFD2QX1         tc240c          7.000000  n
+sum_reg[49]               CFD2QXL         tc240c          5.000000  n
+sum_reg[50]               CFD2QX1         tc240c          7.000000  n
+sum_reg[51]               CFD2QX1         tc240c          7.000000  n
+sum_reg[52]               CFD2QX1         tc240c          7.000000  n
+sum_reg[53]               CFD2QX1         tc240c          7.000000  n
+sum_reg[54]               CFD2QX1         tc240c          7.000000  n
+sum_reg[55]               CFD2QX1         tc240c          7.000000  n
+sum_reg[56]               CFD2QX1         tc240c          7.000000  n
+sum_reg[57]               CFD2QXL         tc240c          5.000000  n
+sum_reg[58]               CFD2QX1         tc240c          7.000000  n
+sum_reg[59]               CFD2QX1         tc240c          7.000000  n
+sum_reg[60]               CFD2QX1         tc240c          7.000000  n
+sum_reg[61]               CFD2QX1         tc240c          7.000000  n
+sum_reg[62]               CFD2QX2         tc240c          7.500000  n
+sum_reg[63]               CFD2X1          tc240c          7.500000  n
+--------------------------------------------------------------------------------
+Total 465 cells                                           2912.000000
+1
+update_timing
+
+Information: Updating design information... (UID-85)
+Information: Input delay ('fall') on clock port 'clock' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('rise') on clock port 'clock' will be added to the clock's propagated skew. (TIM-112)
+1
+report_timing -max_path 5
+
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 5
+Design : rca_64bit
+Version: C-2009.06-SP5
+Date   : Sat Dec  5 01:19:21 2015
+****************************************
+
+Operating Conditions: WCCOM25   Library: tc240c
+Wire Load Model Mode: top
+
+  Startpoint: b_reg[1] (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: sum_reg[63]
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clock (rise edge)                  0.00       0.00
+  clock network delay (propagated)         0.00       0.00
+  b_reg[1]/CP (CFD2QX1)                    0.00       0.00 r
+  b_reg[1]/Q (CFD2QX1)                     0.46       0.46 f
+  fa1/b[1] (four_0bit)                     0.00       0.46 f
+  fa1/ffa1/b (full_adder_0)                0.00       0.46 f
+  fa1/ffa1/U2/Z (CIVX2)                    0.06       0.52 r
+  fa1/ffa1/U4/Z (CND2X1)                   0.09       0.61 f
+  fa1/ffa1/U9/Z (CND2X1)                   0.11       0.72 r
+  fa1/ffa1/U6/Z (CND2X2)                   0.11       0.83 f
+  fa1/ffa1/U7/Z (CND2IX2)                  0.08       0.90 r
+  fa1/ffa1/cout2 (full_adder_0)            0.00       0.90 r
+  fa1/ffa2/cin (full_adder_62)             0.00       0.90 r
+  fa1/ffa2/U5/Z (CND2X2)                   0.09       1.00 f
+  fa1/ffa2/U2/Z (CND2IX2)                  0.08       1.07 r
+  fa1/ffa2/cout2 (full_adder_62)           0.00       1.07 r
+  fa1/ffa3/cin (full_adder_61)             0.00       1.07 r
+  fa1/ffa3/U4/Z (CND2X2)                   0.09       1.17 f
+  fa1/ffa3/U5/Z (CND2X2)                   0.08       1.24 r
+  fa1/ffa3/cout2 (full_adder_61)           0.00       1.24 r
+  fa1/cout4 (four_0bit)                    0.00       1.24 r
+  fa2/cin (four_1bit_0)                    0.00       1.24 r
+  fa2/fa1/cin (full_adder_60)              0.00       1.24 r
+  fa2/fa1/U6/Z (CND2X2)                    0.09       1.34 f
+  fa2/fa1/U7/Z (CND2X2)                    0.07       1.41 r
+  fa2/fa1/cout2 (full_adder_60)            0.00       1.41 r
+  fa2/fa2/cin (full_adder_59)              0.00       1.41 r
+  fa2/fa2/U6/Z (CIVX2)                     0.07       1.48 f
+  fa2/fa2/U8/Z (COND2X2)                   0.15       1.62 r
+  fa2/fa2/cout2 (full_adder_59)            0.00       1.62 r
+  fa2/fa3/cin (full_adder_58)              0.00       1.62 r
+  fa2/fa3/U7/Z (CND2X2)                    0.13       1.76 f
+  fa2/fa3/U5/Z (CND2IX2)                   0.08       1.83 r
+  fa2/fa3/cout2 (full_adder_58)            0.00       1.83 r
+  fa2/fa4/cin (full_adder_57)              0.00       1.83 r
+  fa2/fa4/U7/Z (CND2X2)                    0.09       1.92 f
+  fa2/fa4/U5/Z (CND2IX2)                   0.07       2.00 r
+  fa2/fa4/cout2 (full_adder_57)            0.00       2.00 r
+  fa2/cout3 (four_1bit_0)                  0.00       2.00 r
+  fa3/cin (four_1bit_14)                   0.00       2.00 r
+  fa3/fa1/cin (full_adder_56)              0.00       2.00 r
+  fa3/fa1/U6/Z (CND2IX2)                   0.09       2.09 f
+  fa3/fa1/U7/Z (CND2IX2)                   0.07       2.17 r
+  fa3/fa1/cout2 (full_adder_56)            0.00       2.17 r
+  fa3/fa2/cin (full_adder_55)              0.00       2.17 r
+  fa3/fa2/U7/Z (CND2IX2)                   0.09       2.26 f
+  fa3/fa2/U5/Z (CND2IX2)                   0.07       2.33 r
+  fa3/fa2/cout2 (full_adder_55)            0.00       2.33 r
+  fa3/fa3/cin (full_adder_54)              0.00       2.33 r
+  fa3/fa3/U7/Z (CND2IX2)                   0.09       2.42 f
+  fa3/fa3/U5/Z (CND2IX2)                   0.08       2.50 r
+  fa3/fa3/cout2 (full_adder_54)            0.00       2.50 r
+  fa3/fa4/cin (full_adder_53)              0.00       2.50 r
+  fa3/fa4/U4/Z (CND2X2)                    0.09       2.59 f
+  fa3/fa4/U1/Z (CND2IX2)                   0.07       2.67 r
+  fa3/fa4/cout2 (full_adder_53)            0.00       2.67 r
+  fa3/cout3 (four_1bit_14)                 0.00       2.67 r
+  fa4/cin (four_1bit_13)                   0.00       2.67 r
+  fa4/fa1/cin (full_adder_52)              0.00       2.67 r
+  fa4/fa1/U5/Z (CND2IX2)                   0.09       2.76 f
+  fa4/fa1/U8/Z (CND2X2)                    0.07       2.84 r
+  fa4/fa1/cout2 (full_adder_52)            0.00       2.84 r
+  fa4/fa2/cin (full_adder_51)              0.00       2.84 r
+  fa4/fa2/U7/Z (CND2IX2)                   0.09       2.93 f
+  fa4/fa2/U1/Z (CND2IX2)                   0.07       3.00 r
+  fa4/fa2/cout2 (full_adder_51)            0.00       3.00 r
+  fa4/fa3/cin (full_adder_50)              0.00       3.00 r
+  fa4/fa3/U7/Z (CND2IX2)                   0.09       3.09 f
+  fa4/fa3/U5/Z (CND2IX2)                   0.07       3.17 r
+  fa4/fa3/cout2 (full_adder_50)            0.00       3.17 r
+  fa4/fa4/cin (full_adder_49)              0.00       3.17 r
+  fa4/fa4/U5/Z (CND2IX2)                   0.09       3.26 f
+  fa4/fa4/U8/Z (CND2X2)                    0.08       3.34 r
+  fa4/fa4/cout2 (full_adder_49)            0.00       3.34 r
+  fa4/cout3 (four_1bit_13)                 0.00       3.34 r
+  fa5/cin (four_1bit_12)                   0.00       3.34 r
+  fa5/fa1/cin (full_adder_48)              0.00       3.34 r
+  fa5/fa1/U4/Z (CND2X2)                    0.09       3.43 f
+  fa5/fa1/U1/Z (CND2IX2)                   0.08       3.50 r
+  fa5/fa1/cout2 (full_adder_48)            0.00       3.50 r
+  fa5/fa2/cin (full_adder_47)              0.00       3.50 r
+  fa5/fa2/U7/Z (CND2X2)                    0.09       3.60 f
+  fa5/fa2/U5/Z (CND2IX2)                   0.08       3.67 r
+  fa5/fa2/cout2 (full_adder_47)            0.00       3.67 r
+  fa5/fa3/cin (full_adder_46)              0.00       3.67 r
+  fa5/fa3/U7/Z (CND2X2)                    0.09       3.77 f
+  fa5/fa3/U5/Z (CND2IX2)                   0.08       3.84 r
+  fa5/fa3/cout2 (full_adder_46)            0.00       3.84 r
+  fa5/fa4/cin (full_adder_45)              0.00       3.84 r
+  fa5/fa4/U4/Z (CND2X2)                    0.09       3.94 f
+  fa5/fa4/U1/Z (CND2IX2)                   0.08       4.01 r
+  fa5/fa4/cout2 (full_adder_45)            0.00       4.01 r
+  fa5/cout3 (four_1bit_12)                 0.00       4.01 r
+  fa6/cin (four_1bit_11)                   0.00       4.01 r
+  fa6/fa1/cin (full_adder_44)              0.00       4.01 r
+  fa6/fa1/U7/Z (CND2X2)                    0.09       4.10 f
+  fa6/fa1/U2/Z (CND2IX2)                   0.08       4.18 r
+  fa6/fa1/cout2 (full_adder_44)            0.00       4.18 r
+  fa6/fa2/cin (full_adder_43)              0.00       4.18 r
+  fa6/fa2/U7/Z (CND2X2)                    0.09       4.27 f
+  fa6/fa2/U2/Z (CND2IX2)                   0.07       4.35 r
+  fa6/fa2/cout2 (full_adder_43)            0.00       4.35 r
+  fa6/fa3/cin (full_adder_42)              0.00       4.35 r
+  fa6/fa3/U5/Z (CND2IX2)                   0.09       4.44 f
+  fa6/fa3/U8/Z (CND2X2)                    0.07       4.52 r
+  fa6/fa3/cout2 (full_adder_42)            0.00       4.52 r
+  fa6/fa4/cin (full_adder_41)              0.00       4.52 r
+  fa6/fa4/U7/Z (CND2IX2)                   0.09       4.61 f
+  fa6/fa4/U5/Z (CND2IX2)                   0.07       4.68 r
+  fa6/fa4/cout2 (full_adder_41)            0.00       4.68 r
+  fa6/cout3 (four_1bit_11)                 0.00       4.68 r
+  fa7/cin (four_1bit_10)                   0.00       4.68 r
+  fa7/fa1/cin (full_adder_40)              0.00       4.68 r
+  fa7/fa1/U5/Z (CND2IX2)                   0.09       4.77 f
+  fa7/fa1/U7/Z (CND2IX2)                   0.07       4.85 r
+  fa7/fa1/cout2 (full_adder_40)            0.00       4.85 r
+  fa7/fa2/cin (full_adder_39)              0.00       4.85 r
+  fa7/fa2/U7/Z (CND2IX2)                   0.09       4.94 f
+  fa7/fa2/U2/Z (CND2IX2)                   0.07       5.01 r
+  fa7/fa2/cout2 (full_adder_39)            0.00       5.01 r
+  fa7/fa3/cin (full_adder_38)              0.00       5.01 r
+  fa7/fa3/U5/Z (CND2IX2)                   0.09       5.11 f
+  fa7/fa3/U7/Z (CND2IX2)                   0.07       5.18 r
+  fa7/fa3/cout2 (full_adder_38)            0.00       5.18 r
+  fa7/fa4/cin (full_adder_37)              0.00       5.18 r
+  fa7/fa4/U5/Z (CND2IX2)                   0.09       5.27 f
+  fa7/fa4/U7/Z (CND2IX2)                   0.07       5.35 r
+  fa7/fa4/cout2 (full_adder_37)            0.00       5.35 r
+  fa7/cout3 (four_1bit_10)                 0.00       5.35 r
+  fa8/cin (four_1bit_9)                    0.00       5.35 r
+  fa8/fa1/cin (full_adder_36)              0.00       5.35 r
+  fa8/fa1/U5/Z (CND2IX2)                   0.09       5.44 f
+  fa8/fa1/U8/Z (CND2X2)                    0.08       5.52 r
+  fa8/fa1/cout2 (full_adder_36)            0.00       5.52 r
+  fa8/fa2/cin (full_adder_35)              0.00       5.52 r
+  fa8/fa2/U2/Z (CND2X2)                    0.09       5.61 f
+  fa8/fa2/U4/Z (CND2X2)                    0.08       5.68 r
+  fa8/fa2/cout2 (full_adder_35)            0.00       5.68 r
+  fa8/fa3/cin (full_adder_34)              0.00       5.68 r
+  fa8/fa3/U4/Z (CND2X2)                    0.09       5.78 f
+  fa8/fa3/U5/Z (CND2X2)                    0.08       5.85 r
+  fa8/fa3/cout2 (full_adder_34)            0.00       5.85 r
+  fa8/fa4/cin (full_adder_33)              0.00       5.85 r
+  fa8/fa4/U7/Z (CND2X2)                    0.09       5.95 f
+  fa8/fa4/U5/Z (CND2IX2)                   0.08       6.02 r
+  fa8/fa4/cout2 (full_adder_33)            0.00       6.02 r
+  fa8/cout3 (four_1bit_9)                  0.00       6.02 r
+  fa9/cin (four_1bit_8)                    0.00       6.02 r
+  fa9/fa1/cin (full_adder_32)              0.00       6.02 r
+  fa9/fa1/U4/Z (CND2X2)                    0.09       6.12 f
+  fa9/fa1/U1/Z (CND2IX2)                   0.08       6.19 r
+  fa9/fa1/cout2 (full_adder_32)            0.00       6.19 r
+  fa9/fa2/cin (full_adder_31)              0.00       6.19 r
+  fa9/fa2/U5/Z (CND2X2)                    0.09       6.28 f
+  fa9/fa2/U2/Z (CND2IX2)                   0.08       6.36 r
+  fa9/fa2/cout2 (full_adder_31)            0.00       6.36 r
+  fa9/fa3/cin (full_adder_30)              0.00       6.36 r
+  fa9/fa3/U6/Z (CND2X2)                    0.09       6.45 f
+  fa9/fa3/U7/Z (CND2X2)                    0.07       6.53 r
+  fa9/fa3/cout2 (full_adder_30)            0.00       6.53 r
+  fa9/fa4/cin (full_adder_29)              0.00       6.53 r
+  fa9/fa4/U5/Z (CND2IX2)                   0.09       6.62 f
+  fa9/fa4/U7/Z (CND2IX2)                   0.07       6.69 r
+  fa9/fa4/cout2 (full_adder_29)            0.00       6.69 r
+  fa9/cout3 (four_1bit_8)                  0.00       6.69 r
+  fa10/cin (four_1bit_7)                   0.00       6.69 r
+  fa10/fa1/cin (full_adder_28)             0.00       6.69 r
+  fa10/fa1/U7/Z (CND2IX2)                  0.09       6.79 f
+  fa10/fa1/U2/Z (CND2IX2)                  0.07       6.86 r
+  fa10/fa1/cout2 (full_adder_28)           0.00       6.86 r
+  fa10/fa2/cin (full_adder_27)             0.00       6.86 r
+  fa10/fa2/U7/Z (CND2IX2)                  0.09       6.95 f
+  fa10/fa2/U5/Z (CND2IX2)                  0.08       7.03 r
+  fa10/fa2/cout2 (full_adder_27)           0.00       7.03 r
+  fa10/fa3/cin (full_adder_26)             0.00       7.03 r
+  fa10/fa3/U7/Z (CND2X2)                   0.09       7.12 f
+  fa10/fa3/U5/Z (CND2IX2)                  0.07       7.20 r
+  fa10/fa3/cout2 (full_adder_26)           0.00       7.20 r
+  fa10/fa4/cin (full_adder_25)             0.00       7.20 r
+  fa10/fa4/U5/Z (CND2IX2)                  0.09       7.29 f
+  fa10/fa4/U7/Z (CND2IX2)                  0.08       7.36 r
+  fa10/fa4/cout2 (full_adder_25)           0.00       7.36 r
+  fa10/cout3 (four_1bit_7)                 0.00       7.36 r
+  fa11/cin (four_1bit_6)                   0.00       7.36 r
+  fa11/fa1/cin (full_adder_24)             0.00       7.36 r
+  fa11/fa1/U7/Z (CND2X2)                   0.09       7.46 f
+  fa11/fa1/U5/Z (CND2IX2)                  0.08       7.53 r
+  fa11/fa1/cout2 (full_adder_24)           0.00       7.53 r
+  fa11/fa2/cin (full_adder_23)             0.00       7.53 r
+  fa11/fa2/U7/Z (CND2X2)                   0.09       7.63 f
+  fa11/fa2/U2/Z (CND2IX2)                  0.08       7.70 r
+  fa11/fa2/cout2 (full_adder_23)           0.00       7.70 r
+  fa11/fa3/cin (full_adder_22)             0.00       7.70 r
+  fa11/fa3/U4/Z (CND2X2)                   0.09       7.80 f
+  fa11/fa3/U1/Z (CND2IX2)                  0.08       7.87 r
+  fa11/fa3/cout2 (full_adder_22)           0.00       7.87 r
+  fa11/fa4/cin (full_adder_21)             0.00       7.87 r
+  fa11/fa4/U5/Z (CND2X2)                   0.09       7.96 f
+  fa11/fa4/U1/Z (CND2IX2)                  0.08       8.04 r
+  fa11/fa4/cout2 (full_adder_21)           0.00       8.04 r
+  fa11/cout3 (four_1bit_6)                 0.00       8.04 r
+  fa12/cin (four_1bit_5)                   0.00       8.04 r
+  fa12/fa1/cin (full_adder_20)             0.00       8.04 r
+  fa12/fa1/U7/Z (CND2X2)                   0.09       8.13 f
+  fa12/fa1/U5/Z (CND2IX2)                  0.08       8.21 r
+  fa12/fa1/cout2 (full_adder_20)           0.00       8.21 r
+  fa12/fa2/cin (full_adder_19)             0.00       8.21 r
+  fa12/fa2/U7/Z (CND2X2)                   0.09       8.30 f
+  fa12/fa2/U2/Z (CND2IX2)                  0.08       8.38 r
+  fa12/fa2/cout2 (full_adder_19)           0.00       8.38 r
+  fa12/fa3/cin (full_adder_18)             0.00       8.38 r
+  fa12/fa3/U7/Z (CND2X2)                   0.09       8.47 f
+  fa12/fa3/U5/Z (CND2IX2)                  0.08       8.55 r
+  fa12/fa3/cout2 (full_adder_18)           0.00       8.55 r
+  fa12/fa4/cin (full_adder_17)             0.00       8.55 r
+  fa12/fa4/U2/Z (CND2X2)                   0.09       8.64 f
+  fa12/fa4/U4/Z (CND2X2)                   0.07       8.72 r
+  fa12/fa4/cout2 (full_adder_17)           0.00       8.72 r
+  fa12/cout3 (four_1bit_5)                 0.00       8.72 r
+  fa13/cin (four_1bit_4)                   0.00       8.72 r
+  fa13/fa1/cin (full_adder_16)             0.00       8.72 r
+  fa13/fa1/U7/Z (CND2IX2)                  0.09       8.81 f
+  fa13/fa1/U5/Z (CND2IX2)                  0.08       8.88 r
+  fa13/fa1/cout2 (full_adder_16)           0.00       8.88 r
+  fa13/fa2/cin (full_adder_15)             0.00       8.88 r
+  fa13/fa2/U4/Z (CND2X2)                   0.09       8.98 f
+  fa13/fa2/U1/Z (CND2IX2)                  0.08       9.05 r
+  fa13/fa2/cout2 (full_adder_15)           0.00       9.05 r
+  fa13/fa3/cin (full_adder_14)             0.00       9.05 r
+  fa13/fa3/U7/Z (CND2X2)                   0.09       9.14 f
+  fa13/fa3/U5/Z (CND2IX2)                  0.08       9.22 r
+  fa13/fa3/cout2 (full_adder_14)           0.00       9.22 r
+  fa13/fa4/cin (full_adder_13)             0.00       9.22 r
+  fa13/fa4/U7/Z (CND2X2)                   0.09       9.31 f
+  fa13/fa4/U5/Z (CND2IX2)                  0.08       9.39 r
+  fa13/fa4/cout2 (full_adder_13)           0.00       9.39 r
+  fa13/cout3 (four_1bit_4)                 0.00       9.39 r
+  fa14/cin (four_1bit_3)                   0.00       9.39 r
+  fa14/fa1/cin (full_adder_12)             0.00       9.39 r
+  fa14/fa1/U5/Z (CND2X2)                   0.09       9.48 f
+  fa14/fa1/U2/Z (CND2IX2)                  0.08       9.56 r
+  fa14/fa1/cout2 (full_adder_12)           0.00       9.56 r
+  fa14/fa2/cin (full_adder_11)             0.00       9.56 r
+  fa14/fa2/U7/Z (CND2X2)                   0.09       9.65 f
+  fa14/fa2/U5/Z (CND2IX2)                  0.07       9.73 r
+  fa14/fa2/cout2 (full_adder_11)           0.00       9.73 r
+  fa14/fa3/cin (full_adder_10)             0.00       9.73 r
+  fa14/fa3/U5/Z (CND2IX2)                  0.09       9.82 f
+  fa14/fa3/U8/Z (CND2X2)                   0.07       9.89 r
+  fa14/fa3/cout2 (full_adder_10)           0.00       9.89 r
+  fa14/fa4/cin (full_adder_9)              0.00       9.89 r
+  fa14/fa4/U5/Z (CND2IX2)                  0.09       9.98 f
+  fa14/fa4/U6/Z (CND2IX2)                  0.08      10.06 r
+  fa14/fa4/cout2 (full_adder_9)            0.00      10.06 r
+  fa14/cout3 (four_1bit_3)                 0.00      10.06 r
+  fa15/cin (four_1bit_2)                   0.00      10.06 r
+  fa15/fa1/cin (full_adder_8)              0.00      10.06 r
+  fa15/fa1/U5/Z (CND2X2)                   0.09      10.15 f
+  fa15/fa1/U2/Z (CND2IX2)                  0.08      10.23 r
+  fa15/fa1/cout2 (full_adder_8)            0.00      10.23 r
+  fa15/fa2/cin (full_adder_7)              0.00      10.23 r
+  fa15/fa2/U7/Z (CND2X2)                   0.09      10.32 f
+  fa15/fa2/U5/Z (CND2IX2)                  0.07      10.40 r
+  fa15/fa2/cout2 (full_adder_7)            0.00      10.40 r
+  fa15/fa3/cin (full_adder_6)              0.00      10.40 r
+  fa15/fa3/U4/Z (CND2IX2)                  0.09      10.49 f
+  fa15/fa3/U7/Z (CND2X2)                   0.08      10.56 r
+  fa15/fa3/cout2 (full_adder_6)            0.00      10.56 r
+  fa15/fa4/cin (full_adder_5)              0.00      10.56 r
+  fa15/fa4/U6/Z (CND2X2)                   0.09      10.66 f
+  fa15/fa4/U4/Z (CND2IX2)                  0.07      10.73 r
+  fa15/fa4/cout2 (full_adder_5)            0.00      10.73 r
+  fa15/cout3 (four_1bit_2)                 0.00      10.73 r
+  fa16/cin (four_1bit_1)                   0.00      10.73 r
+  fa16/fa1/cin (full_adder_4)              0.00      10.73 r
+  fa16/fa1/U4/Z (CND2IX2)                  0.09      10.82 f
+  fa16/fa1/U5/Z (CND2IX2)                  0.08      10.90 r
+  fa16/fa1/cout2 (full_adder_4)            0.00      10.90 r
+  fa16/fa2/cin (full_adder_3)              0.00      10.90 r
+  fa16/fa2/U5/Z (CND2X2)                   0.09      10.99 f
+  fa16/fa2/U6/Z (CND2X2)                   0.08      11.07 r
+  fa16/fa2/cout2 (full_adder_3)            0.00      11.07 r
+  fa16/fa3/cin (full_adder_2)              0.00      11.07 r
+  fa16/fa3/U7/Z (CND2X2)                   0.10      11.17 f
+  fa16/fa3/U2/Z (CND2IX2)                  0.08      11.25 r
+  fa16/fa3/cout2 (full_adder_2)            0.00      11.25 r
+  fa16/fa4/cin (full_adder_1)              0.00      11.25 r
+  fa16/fa4/U5/Z (CENX1)                    0.23      11.48 r
+  fa16/fa4/sum2 (full_adder_1)             0.00      11.48 r
+  fa16/sum3[3] (four_1bit_1)               0.00      11.48 r
+  sum_reg[63]/D (CFD2X1)                   0.00      11.48 r
+  data arrival time                                  11.48
+
+  clock clock (rise edge)                 12.04      12.04
+  clock network delay (propagated)         0.00      12.04
+  clock uncertainty                       -0.25      11.79
+  sum_reg[63]/CP (CFD2X1)                  0.00      11.79 r
+  library setup time                      -0.31      11.48
+  data required time                                 11.48
+  -----------------------------------------------------------
+  data required time                                 11.48
+  data arrival time                                 -11.48
+  -----------------------------------------------------------
+  slack (MET)                                         0.00
+
+
+  Startpoint: b_reg[1] (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: crout_reg (rising edge-triggered flip-flop clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clock (rise edge)                  0.00       0.00
+  clock network delay (propagated)         0.00       0.00
+  b_reg[1]/CP (CFD2QX1)                    0.00       0.00 r
+  b_reg[1]/Q (CFD2QX1)                     0.46       0.46 f
+  fa1/b[1] (four_0bit)                     0.00       0.46 f
+  fa1/ffa1/b (full_adder_0)                0.00       0.46 f
+  fa1/ffa1/U2/Z (CIVX2)                    0.06       0.52 r
+  fa1/ffa1/U4/Z (CND2X1)                   0.09       0.61 f
+  fa1/ffa1/U9/Z (CND2X1)                   0.11       0.72 r
+  fa1/ffa1/U6/Z (CND2X2)                   0.11       0.83 f
+  fa1/ffa1/U7/Z (CND2IX2)                  0.08       0.90 r
+  fa1/ffa1/cout2 (full_adder_0)            0.00       0.90 r
+  fa1/ffa2/cin (full_adder_62)             0.00       0.90 r
+  fa1/ffa2/U5/Z (CND2X2)                   0.09       1.00 f
+  fa1/ffa2/U2/Z (CND2IX2)                  0.08       1.07 r
+  fa1/ffa2/cout2 (full_adder_62)           0.00       1.07 r
+  fa1/ffa3/cin (full_adder_61)             0.00       1.07 r
+  fa1/ffa3/U4/Z (CND2X2)                   0.09       1.17 f
+  fa1/ffa3/U5/Z (CND2X2)                   0.08       1.24 r
+  fa1/ffa3/cout2 (full_adder_61)           0.00       1.24 r
+  fa1/cout4 (four_0bit)                    0.00       1.24 r
+  fa2/cin (four_1bit_0)                    0.00       1.24 r
+  fa2/fa1/cin (full_adder_60)              0.00       1.24 r
+  fa2/fa1/U6/Z (CND2X2)                    0.09       1.34 f
+  fa2/fa1/U7/Z (CND2X2)                    0.07       1.41 r
+  fa2/fa1/cout2 (full_adder_60)            0.00       1.41 r
+  fa2/fa2/cin (full_adder_59)              0.00       1.41 r
+  fa2/fa2/U6/Z (CIVX2)                     0.07       1.48 f
+  fa2/fa2/U8/Z (COND2X2)                   0.15       1.62 r
+  fa2/fa2/cout2 (full_adder_59)            0.00       1.62 r
+  fa2/fa3/cin (full_adder_58)              0.00       1.62 r
+  fa2/fa3/U7/Z (CND2X2)                    0.13       1.76 f
+  fa2/fa3/U5/Z (CND2IX2)                   0.08       1.83 r
+  fa2/fa3/cout2 (full_adder_58)            0.00       1.83 r
+  fa2/fa4/cin (full_adder_57)              0.00       1.83 r
+  fa2/fa4/U7/Z (CND2X2)                    0.09       1.92 f
+  fa2/fa4/U5/Z (CND2IX2)                   0.07       2.00 r
+  fa2/fa4/cout2 (full_adder_57)            0.00       2.00 r
+  fa2/cout3 (four_1bit_0)                  0.00       2.00 r
+  fa3/cin (four_1bit_14)                   0.00       2.00 r
+  fa3/fa1/cin (full_adder_56)              0.00       2.00 r
+  fa3/fa1/U6/Z (CND2IX2)                   0.09       2.09 f
+  fa3/fa1/U7/Z (CND2IX2)                   0.07       2.17 r
+  fa3/fa1/cout2 (full_adder_56)            0.00       2.17 r
+  fa3/fa2/cin (full_adder_55)              0.00       2.17 r
+  fa3/fa2/U7/Z (CND2IX2)                   0.09       2.26 f
+  fa3/fa2/U5/Z (CND2IX2)                   0.07       2.33 r
+  fa3/fa2/cout2 (full_adder_55)            0.00       2.33 r
+  fa3/fa3/cin (full_adder_54)              0.00       2.33 r
+  fa3/fa3/U7/Z (CND2IX2)                   0.09       2.42 f
+  fa3/fa3/U5/Z (CND2IX2)                   0.08       2.50 r
+  fa3/fa3/cout2 (full_adder_54)            0.00       2.50 r
+  fa3/fa4/cin (full_adder_53)              0.00       2.50 r
+  fa3/fa4/U4/Z (CND2X2)                    0.09       2.59 f
+  fa3/fa4/U1/Z (CND2IX2)                   0.07       2.67 r
+  fa3/fa4/cout2 (full_adder_53)            0.00       2.67 r
+  fa3/cout3 (four_1bit_14)                 0.00       2.67 r
+  fa4/cin (four_1bit_13)                   0.00       2.67 r
+  fa4/fa1/cin (full_adder_52)              0.00       2.67 r
+  fa4/fa1/U5/Z (CND2IX2)                   0.09       2.76 f
+  fa4/fa1/U8/Z (CND2X2)                    0.07       2.84 r
+  fa4/fa1/cout2 (full_adder_52)            0.00       2.84 r
+  fa4/fa2/cin (full_adder_51)              0.00       2.84 r
+  fa4/fa2/U7/Z (CND2IX2)                   0.09       2.93 f
+  fa4/fa2/U1/Z (CND2IX2)                   0.07       3.00 r
+  fa4/fa2/cout2 (full_adder_51)            0.00       3.00 r
+  fa4/fa3/cin (full_adder_50)              0.00       3.00 r
+  fa4/fa3/U7/Z (CND2IX2)                   0.09       3.09 f
+  fa4/fa3/U5/Z (CND2IX2)                   0.07       3.17 r
+  fa4/fa3/cout2 (full_adder_50)            0.00       3.17 r
+  fa4/fa4/cin (full_adder_49)              0.00       3.17 r
+  fa4/fa4/U5/Z (CND2IX2)                   0.09       3.26 f
+  fa4/fa4/U8/Z (CND2X2)                    0.08       3.34 r
+  fa4/fa4/cout2 (full_adder_49)            0.00       3.34 r
+  fa4/cout3 (four_1bit_13)                 0.00       3.34 r
+  fa5/cin (four_1bit_12)                   0.00       3.34 r
+  fa5/fa1/cin (full_adder_48)              0.00       3.34 r
+  fa5/fa1/U4/Z (CND2X2)                    0.09       3.43 f
+  fa5/fa1/U1/Z (CND2IX2)                   0.08       3.50 r
+  fa5/fa1/cout2 (full_adder_48)            0.00       3.50 r
+  fa5/fa2/cin (full_adder_47)              0.00       3.50 r
+  fa5/fa2/U7/Z (CND2X2)                    0.09       3.60 f
+  fa5/fa2/U5/Z (CND2IX2)                   0.08       3.67 r
+  fa5/fa2/cout2 (full_adder_47)            0.00       3.67 r
+  fa5/fa3/cin (full_adder_46)              0.00       3.67 r
+  fa5/fa3/U7/Z (CND2X2)                    0.09       3.77 f
+  fa5/fa3/U5/Z (CND2IX2)                   0.08       3.84 r
+  fa5/fa3/cout2 (full_adder_46)            0.00       3.84 r
+  fa5/fa4/cin (full_adder_45)              0.00       3.84 r
+  fa5/fa4/U4/Z (CND2X2)                    0.09       3.94 f
+  fa5/fa4/U1/Z (CND2IX2)                   0.08       4.01 r
+  fa5/fa4/cout2 (full_adder_45)            0.00       4.01 r
+  fa5/cout3 (four_1bit_12)                 0.00       4.01 r
+  fa6/cin (four_1bit_11)                   0.00       4.01 r
+  fa6/fa1/cin (full_adder_44)              0.00       4.01 r
+  fa6/fa1/U7/Z (CND2X2)                    0.09       4.10 f
+  fa6/fa1/U2/Z (CND2IX2)                   0.08       4.18 r
+  fa6/fa1/cout2 (full_adder_44)            0.00       4.18 r
+  fa6/fa2/cin (full_adder_43)              0.00       4.18 r
+  fa6/fa2/U7/Z (CND2X2)                    0.09       4.27 f
+  fa6/fa2/U2/Z (CND2IX2)                   0.07       4.35 r
+  fa6/fa2/cout2 (full_adder_43)            0.00       4.35 r
+  fa6/fa3/cin (full_adder_42)              0.00       4.35 r
+  fa6/fa3/U5/Z (CND2IX2)                   0.09       4.44 f
+  fa6/fa3/U8/Z (CND2X2)                    0.07       4.52 r
+  fa6/fa3/cout2 (full_adder_42)            0.00       4.52 r
+  fa6/fa4/cin (full_adder_41)              0.00       4.52 r
+  fa6/fa4/U7/Z (CND2IX2)                   0.09       4.61 f
+  fa6/fa4/U5/Z (CND2IX2)                   0.07       4.68 r
+  fa6/fa4/cout2 (full_adder_41)            0.00       4.68 r
+  fa6/cout3 (four_1bit_11)                 0.00       4.68 r
+  fa7/cin (four_1bit_10)                   0.00       4.68 r
+  fa7/fa1/cin (full_adder_40)              0.00       4.68 r
+  fa7/fa1/U5/Z (CND2IX2)                   0.09       4.77 f
+  fa7/fa1/U7/Z (CND2IX2)                   0.07       4.85 r
+  fa7/fa1/cout2 (full_adder_40)            0.00       4.85 r
+  fa7/fa2/cin (full_adder_39)              0.00       4.85 r
+  fa7/fa2/U7/Z (CND2IX2)                   0.09       4.94 f
+  fa7/fa2/U2/Z (CND2IX2)                   0.07       5.01 r
+  fa7/fa2/cout2 (full_adder_39)            0.00       5.01 r
+  fa7/fa3/cin (full_adder_38)              0.00       5.01 r
+  fa7/fa3/U5/Z (CND2IX2)                   0.09       5.11 f
+  fa7/fa3/U7/Z (CND2IX2)                   0.07       5.18 r
+  fa7/fa3/cout2 (full_adder_38)            0.00       5.18 r
+  fa7/fa4/cin (full_adder_37)              0.00       5.18 r
+  fa7/fa4/U5/Z (CND2IX2)                   0.09       5.27 f
+  fa7/fa4/U7/Z (CND2IX2)                   0.07       5.35 r
+  fa7/fa4/cout2 (full_adder_37)            0.00       5.35 r
+  fa7/cout3 (four_1bit_10)                 0.00       5.35 r
+  fa8/cin (four_1bit_9)                    0.00       5.35 r
+  fa8/fa1/cin (full_adder_36)              0.00       5.35 r
+  fa8/fa1/U5/Z (CND2IX2)                   0.09       5.44 f
+  fa8/fa1/U8/Z (CND2X2)                    0.08       5.52 r
+  fa8/fa1/cout2 (full_adder_36)            0.00       5.52 r
+  fa8/fa2/cin (full_adder_35)              0.00       5.52 r
+  fa8/fa2/U2/Z (CND2X2)                    0.09       5.61 f
+  fa8/fa2/U4/Z (CND2X2)                    0.08       5.68 r
+  fa8/fa2/cout2 (full_adder_35)            0.00       5.68 r
+  fa8/fa3/cin (full_adder_34)              0.00       5.68 r
+  fa8/fa3/U4/Z (CND2X2)                    0.09       5.78 f
+  fa8/fa3/U5/Z (CND2X2)                    0.08       5.85 r
+  fa8/fa3/cout2 (full_adder_34)            0.00       5.85 r
+  fa8/fa4/cin (full_adder_33)              0.00       5.85 r
+  fa8/fa4/U7/Z (CND2X2)                    0.09       5.95 f
+  fa8/fa4/U5/Z (CND2IX2)                   0.08       6.02 r
+  fa8/fa4/cout2 (full_adder_33)            0.00       6.02 r
+  fa8/cout3 (four_1bit_9)                  0.00       6.02 r
+  fa9/cin (four_1bit_8)                    0.00       6.02 r
+  fa9/fa1/cin (full_adder_32)              0.00       6.02 r
+  fa9/fa1/U4/Z (CND2X2)                    0.09       6.12 f
+  fa9/fa1/U1/Z (CND2IX2)                   0.08       6.19 r
+  fa9/fa1/cout2 (full_adder_32)            0.00       6.19 r
+  fa9/fa2/cin (full_adder_31)              0.00       6.19 r
+  fa9/fa2/U5/Z (CND2X2)                    0.09       6.28 f
+  fa9/fa2/U2/Z (CND2IX2)                   0.08       6.36 r
+  fa9/fa2/cout2 (full_adder_31)            0.00       6.36 r
+  fa9/fa3/cin (full_adder_30)              0.00       6.36 r
+  fa9/fa3/U6/Z (CND2X2)                    0.09       6.45 f
+  fa9/fa3/U7/Z (CND2X2)                    0.07       6.53 r
+  fa9/fa3/cout2 (full_adder_30)            0.00       6.53 r
+  fa9/fa4/cin (full_adder_29)              0.00       6.53 r
+  fa9/fa4/U5/Z (CND2IX2)                   0.09       6.62 f
+  fa9/fa4/U7/Z (CND2IX2)                   0.07       6.69 r
+  fa9/fa4/cout2 (full_adder_29)            0.00       6.69 r
+  fa9/cout3 (four_1bit_8)                  0.00       6.69 r
+  fa10/cin (four_1bit_7)                   0.00       6.69 r
+  fa10/fa1/cin (full_adder_28)             0.00       6.69 r
+  fa10/fa1/U7/Z (CND2IX2)                  0.09       6.79 f
+  fa10/fa1/U2/Z (CND2IX2)                  0.07       6.86 r
+  fa10/fa1/cout2 (full_adder_28)           0.00       6.86 r
+  fa10/fa2/cin (full_adder_27)             0.00       6.86 r
+  fa10/fa2/U7/Z (CND2IX2)                  0.09       6.95 f
+  fa10/fa2/U5/Z (CND2IX2)                  0.08       7.03 r
+  fa10/fa2/cout2 (full_adder_27)           0.00       7.03 r
+  fa10/fa3/cin (full_adder_26)             0.00       7.03 r
+  fa10/fa3/U7/Z (CND2X2)                   0.09       7.12 f
+  fa10/fa3/U5/Z (CND2IX2)                  0.07       7.20 r
+  fa10/fa3/cout2 (full_adder_26)           0.00       7.20 r
+  fa10/fa4/cin (full_adder_25)             0.00       7.20 r
+  fa10/fa4/U5/Z (CND2IX2)                  0.09       7.29 f
+  fa10/fa4/U7/Z (CND2IX2)                  0.08       7.36 r
+  fa10/fa4/cout2 (full_adder_25)           0.00       7.36 r
+  fa10/cout3 (four_1bit_7)                 0.00       7.36 r
+  fa11/cin (four_1bit_6)                   0.00       7.36 r
+  fa11/fa1/cin (full_adder_24)             0.00       7.36 r
+  fa11/fa1/U7/Z (CND2X2)                   0.09       7.46 f
+  fa11/fa1/U5/Z (CND2IX2)                  0.08       7.53 r
+  fa11/fa1/cout2 (full_adder_24)           0.00       7.53 r
+  fa11/fa2/cin (full_adder_23)             0.00       7.53 r
+  fa11/fa2/U7/Z (CND2X2)                   0.09       7.63 f
+  fa11/fa2/U2/Z (CND2IX2)                  0.08       7.70 r
+  fa11/fa2/cout2 (full_adder_23)           0.00       7.70 r
+  fa11/fa3/cin (full_adder_22)             0.00       7.70 r
+  fa11/fa3/U4/Z (CND2X2)                   0.09       7.80 f
+  fa11/fa3/U1/Z (CND2IX2)                  0.08       7.87 r
+  fa11/fa3/cout2 (full_adder_22)           0.00       7.87 r
+  fa11/fa4/cin (full_adder_21)             0.00       7.87 r
+  fa11/fa4/U5/Z (CND2X2)                   0.09       7.96 f
+  fa11/fa4/U1/Z (CND2IX2)                  0.08       8.04 r
+  fa11/fa4/cout2 (full_adder_21)           0.00       8.04 r
+  fa11/cout3 (four_1bit_6)                 0.00       8.04 r
+  fa12/cin (four_1bit_5)                   0.00       8.04 r
+  fa12/fa1/cin (full_adder_20)             0.00       8.04 r
+  fa12/fa1/U7/Z (CND2X2)                   0.09       8.13 f
+  fa12/fa1/U5/Z (CND2IX2)                  0.08       8.21 r
+  fa12/fa1/cout2 (full_adder_20)           0.00       8.21 r
+  fa12/fa2/cin (full_adder_19)             0.00       8.21 r
+  fa12/fa2/U7/Z (CND2X2)                   0.09       8.30 f
+  fa12/fa2/U2/Z (CND2IX2)                  0.08       8.38 r
+  fa12/fa2/cout2 (full_adder_19)           0.00       8.38 r
+  fa12/fa3/cin (full_adder_18)             0.00       8.38 r
+  fa12/fa3/U7/Z (CND2X2)                   0.09       8.47 f
+  fa12/fa3/U5/Z (CND2IX2)                  0.08       8.55 r
+  fa12/fa3/cout2 (full_adder_18)           0.00       8.55 r
+  fa12/fa4/cin (full_adder_17)             0.00       8.55 r
+  fa12/fa4/U2/Z (CND2X2)                   0.09       8.64 f
+  fa12/fa4/U4/Z (CND2X2)                   0.07       8.72 r
+  fa12/fa4/cout2 (full_adder_17)           0.00       8.72 r
+  fa12/cout3 (four_1bit_5)                 0.00       8.72 r
+  fa13/cin (four_1bit_4)                   0.00       8.72 r
+  fa13/fa1/cin (full_adder_16)             0.00       8.72 r
+  fa13/fa1/U7/Z (CND2IX2)                  0.09       8.81 f
+  fa13/fa1/U5/Z (CND2IX2)                  0.08       8.88 r
+  fa13/fa1/cout2 (full_adder_16)           0.00       8.88 r
+  fa13/fa2/cin (full_adder_15)             0.00       8.88 r
+  fa13/fa2/U4/Z (CND2X2)                   0.09       8.98 f
+  fa13/fa2/U1/Z (CND2IX2)                  0.08       9.05 r
+  fa13/fa2/cout2 (full_adder_15)           0.00       9.05 r
+  fa13/fa3/cin (full_adder_14)             0.00       9.05 r
+  fa13/fa3/U7/Z (CND2X2)                   0.09       9.14 f
+  fa13/fa3/U5/Z (CND2IX2)                  0.08       9.22 r
+  fa13/fa3/cout2 (full_adder_14)           0.00       9.22 r
+  fa13/fa4/cin (full_adder_13)             0.00       9.22 r
+  fa13/fa4/U7/Z (CND2X2)                   0.09       9.31 f
+  fa13/fa4/U5/Z (CND2IX2)                  0.08       9.39 r
+  fa13/fa4/cout2 (full_adder_13)           0.00       9.39 r
+  fa13/cout3 (four_1bit_4)                 0.00       9.39 r
+  fa14/cin (four_1bit_3)                   0.00       9.39 r
+  fa14/fa1/cin (full_adder_12)             0.00       9.39 r
+  fa14/fa1/U5/Z (CND2X2)                   0.09       9.48 f
+  fa14/fa1/U2/Z (CND2IX2)                  0.08       9.56 r
+  fa14/fa1/cout2 (full_adder_12)           0.00       9.56 r
+  fa14/fa2/cin (full_adder_11)             0.00       9.56 r
+  fa14/fa2/U7/Z (CND2X2)                   0.09       9.65 f
+  fa14/fa2/U5/Z (CND2IX2)                  0.07       9.73 r
+  fa14/fa2/cout2 (full_adder_11)           0.00       9.73 r
+  fa14/fa3/cin (full_adder_10)             0.00       9.73 r
+  fa14/fa3/U5/Z (CND2IX2)                  0.09       9.82 f
+  fa14/fa3/U8/Z (CND2X2)                   0.07       9.89 r
+  fa14/fa3/cout2 (full_adder_10)           0.00       9.89 r
+  fa14/fa4/cin (full_adder_9)              0.00       9.89 r
+  fa14/fa4/U5/Z (CND2IX2)                  0.09       9.98 f
+  fa14/fa4/U6/Z (CND2IX2)                  0.08      10.06 r
+  fa14/fa4/cout2 (full_adder_9)            0.00      10.06 r
+  fa14/cout3 (four_1bit_3)                 0.00      10.06 r
+  fa15/cin (four_1bit_2)                   0.00      10.06 r
+  fa15/fa1/cin (full_adder_8)              0.00      10.06 r
+  fa15/fa1/U5/Z (CND2X2)                   0.09      10.15 f
+  fa15/fa1/U2/Z (CND2IX2)                  0.08      10.23 r
+  fa15/fa1/cout2 (full_adder_8)            0.00      10.23 r
+  fa15/fa2/cin (full_adder_7)              0.00      10.23 r
+  fa15/fa2/U7/Z (CND2X2)                   0.09      10.32 f
+  fa15/fa2/U5/Z (CND2IX2)                  0.07      10.40 r
+  fa15/fa2/cout2 (full_adder_7)            0.00      10.40 r
+  fa15/fa3/cin (full_adder_6)              0.00      10.40 r
+  fa15/fa3/U4/Z (CND2IX2)                  0.09      10.49 f
+  fa15/fa3/U7/Z (CND2X2)                   0.08      10.56 r
+  fa15/fa3/cout2 (full_adder_6)            0.00      10.56 r
+  fa15/fa4/cin (full_adder_5)              0.00      10.56 r
+  fa15/fa4/U6/Z (CND2X2)                   0.09      10.66 f
+  fa15/fa4/U4/Z (CND2IX2)                  0.07      10.73 r
+  fa15/fa4/cout2 (full_adder_5)            0.00      10.73 r
+  fa15/cout3 (four_1bit_2)                 0.00      10.73 r
+  fa16/cin (four_1bit_1)                   0.00      10.73 r
+  fa16/fa1/cin (full_adder_4)              0.00      10.73 r
+  fa16/fa1/U4/Z (CND2IX2)                  0.09      10.82 f
+  fa16/fa1/U5/Z (CND2IX2)                  0.08      10.90 r
+  fa16/fa1/cout2 (full_adder_4)            0.00      10.90 r
+  fa16/fa2/cin (full_adder_3)              0.00      10.90 r
+  fa16/fa2/U5/Z (CND2X2)                   0.09      10.99 f
+  fa16/fa2/U6/Z (CND2X2)                   0.08      11.07 r
+  fa16/fa2/cout2 (full_adder_3)            0.00      11.07 r
+  fa16/fa3/cin (full_adder_2)              0.00      11.07 r
+  fa16/fa3/U7/Z (CND2X2)                   0.10      11.17 f
+  fa16/fa3/U2/Z (CND2IX2)                  0.08      11.25 r
+  fa16/fa3/cout2 (full_adder_2)            0.00      11.25 r
+  fa16/fa4/cin (full_adder_1)              0.00      11.25 r
+  fa16/fa4/U4/Z (CND2X1)                   0.10      11.35 f
+  fa16/fa4/U2/Z (CND2X1)                   0.06      11.41 r
+  fa16/fa4/cout2 (full_adder_1)            0.00      11.41 r
+  fa16/cout3 (four_1bit_1)                 0.00      11.41 r
+  crout_reg/D (CFD2QXL)                    0.00      11.41 r
+  data arrival time                                  11.41
+
+  clock clock (rise edge)                 12.04      12.04
+  clock network delay (propagated)         0.00      12.04
+  clock uncertainty                       -0.25      11.79
+  crout_reg/CP (CFD2QXL)                   0.00      11.79 r
+  library setup time                      -0.37      11.42
+  data required time                                 11.42
+  -----------------------------------------------------------
+  data required time                                 11.42
+  data arrival time                                 -11.41
+  -----------------------------------------------------------
+  slack (MET)                                         0.01
+
+
+  Startpoint: b_reg[1] (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: sum_reg[62]
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clock (rise edge)                  0.00       0.00
+  clock network delay (propagated)         0.00       0.00
+  b_reg[1]/CP (CFD2QX1)                    0.00       0.00 r
+  b_reg[1]/Q (CFD2QX1)                     0.46       0.46 f
+  fa1/b[1] (four_0bit)                     0.00       0.46 f
+  fa1/ffa1/b (full_adder_0)                0.00       0.46 f
+  fa1/ffa1/U2/Z (CIVX2)                    0.06       0.52 r
+  fa1/ffa1/U4/Z (CND2X1)                   0.09       0.61 f
+  fa1/ffa1/U9/Z (CND2X1)                   0.11       0.72 r
+  fa1/ffa1/U6/Z (CND2X2)                   0.11       0.83 f
+  fa1/ffa1/U7/Z (CND2IX2)                  0.08       0.90 r
+  fa1/ffa1/cout2 (full_adder_0)            0.00       0.90 r
+  fa1/ffa2/cin (full_adder_62)             0.00       0.90 r
+  fa1/ffa2/U5/Z (CND2X2)                   0.09       1.00 f
+  fa1/ffa2/U2/Z (CND2IX2)                  0.08       1.07 r
+  fa1/ffa2/cout2 (full_adder_62)           0.00       1.07 r
+  fa1/ffa3/cin (full_adder_61)             0.00       1.07 r
+  fa1/ffa3/U4/Z (CND2X2)                   0.09       1.17 f
+  fa1/ffa3/U5/Z (CND2X2)                   0.08       1.24 r
+  fa1/ffa3/cout2 (full_adder_61)           0.00       1.24 r
+  fa1/cout4 (four_0bit)                    0.00       1.24 r
+  fa2/cin (four_1bit_0)                    0.00       1.24 r
+  fa2/fa1/cin (full_adder_60)              0.00       1.24 r
+  fa2/fa1/U6/Z (CND2X2)                    0.09       1.34 f
+  fa2/fa1/U7/Z (CND2X2)                    0.07       1.41 r
+  fa2/fa1/cout2 (full_adder_60)            0.00       1.41 r
+  fa2/fa2/cin (full_adder_59)              0.00       1.41 r
+  fa2/fa2/U6/Z (CIVX2)                     0.07       1.48 f
+  fa2/fa2/U8/Z (COND2X2)                   0.15       1.62 r
+  fa2/fa2/cout2 (full_adder_59)            0.00       1.62 r
+  fa2/fa3/cin (full_adder_58)              0.00       1.62 r
+  fa2/fa3/U7/Z (CND2X2)                    0.13       1.76 f
+  fa2/fa3/U5/Z (CND2IX2)                   0.08       1.83 r
+  fa2/fa3/cout2 (full_adder_58)            0.00       1.83 r
+  fa2/fa4/cin (full_adder_57)              0.00       1.83 r
+  fa2/fa4/U7/Z (CND2X2)                    0.09       1.92 f
+  fa2/fa4/U5/Z (CND2IX2)                   0.07       2.00 r
+  fa2/fa4/cout2 (full_adder_57)            0.00       2.00 r
+  fa2/cout3 (four_1bit_0)                  0.00       2.00 r
+  fa3/cin (four_1bit_14)                   0.00       2.00 r
+  fa3/fa1/cin (full_adder_56)              0.00       2.00 r
+  fa3/fa1/U6/Z (CND2IX2)                   0.09       2.09 f
+  fa3/fa1/U7/Z (CND2IX2)                   0.07       2.17 r
+  fa3/fa1/cout2 (full_adder_56)            0.00       2.17 r
+  fa3/fa2/cin (full_adder_55)              0.00       2.17 r
+  fa3/fa2/U7/Z (CND2IX2)                   0.09       2.26 f
+  fa3/fa2/U5/Z (CND2IX2)                   0.07       2.33 r
+  fa3/fa2/cout2 (full_adder_55)            0.00       2.33 r
+  fa3/fa3/cin (full_adder_54)              0.00       2.33 r
+  fa3/fa3/U7/Z (CND2IX2)                   0.09       2.42 f
+  fa3/fa3/U5/Z (CND2IX2)                   0.08       2.50 r
+  fa3/fa3/cout2 (full_adder_54)            0.00       2.50 r
+  fa3/fa4/cin (full_adder_53)              0.00       2.50 r
+  fa3/fa4/U4/Z (CND2X2)                    0.09       2.59 f
+  fa3/fa4/U1/Z (CND2IX2)                   0.07       2.67 r
+  fa3/fa4/cout2 (full_adder_53)            0.00       2.67 r
+  fa3/cout3 (four_1bit_14)                 0.00       2.67 r
+  fa4/cin (four_1bit_13)                   0.00       2.67 r
+  fa4/fa1/cin (full_adder_52)              0.00       2.67 r
+  fa4/fa1/U5/Z (CND2IX2)                   0.09       2.76 f
+  fa4/fa1/U8/Z (CND2X2)                    0.07       2.84 r
+  fa4/fa1/cout2 (full_adder_52)            0.00       2.84 r
+  fa4/fa2/cin (full_adder_51)              0.00       2.84 r
+  fa4/fa2/U7/Z (CND2IX2)                   0.09       2.93 f
+  fa4/fa2/U1/Z (CND2IX2)                   0.07       3.00 r
+  fa4/fa2/cout2 (full_adder_51)            0.00       3.00 r
+  fa4/fa3/cin (full_adder_50)              0.00       3.00 r
+  fa4/fa3/U7/Z (CND2IX2)                   0.09       3.09 f
+  fa4/fa3/U5/Z (CND2IX2)                   0.07       3.17 r
+  fa4/fa3/cout2 (full_adder_50)            0.00       3.17 r
+  fa4/fa4/cin (full_adder_49)              0.00       3.17 r
+  fa4/fa4/U5/Z (CND2IX2)                   0.09       3.26 f
+  fa4/fa4/U8/Z (CND2X2)                    0.08       3.34 r
+  fa4/fa4/cout2 (full_adder_49)            0.00       3.34 r
+  fa4/cout3 (four_1bit_13)                 0.00       3.34 r
+  fa5/cin (four_1bit_12)                   0.00       3.34 r
+  fa5/fa1/cin (full_adder_48)              0.00       3.34 r
+  fa5/fa1/U4/Z (CND2X2)                    0.09       3.43 f
+  fa5/fa1/U1/Z (CND2IX2)                   0.08       3.50 r
+  fa5/fa1/cout2 (full_adder_48)            0.00       3.50 r
+  fa5/fa2/cin (full_adder_47)              0.00       3.50 r
+  fa5/fa2/U7/Z (CND2X2)                    0.09       3.60 f
+  fa5/fa2/U5/Z (CND2IX2)                   0.08       3.67 r
+  fa5/fa2/cout2 (full_adder_47)            0.00       3.67 r
+  fa5/fa3/cin (full_adder_46)              0.00       3.67 r
+  fa5/fa3/U7/Z (CND2X2)                    0.09       3.77 f
+  fa5/fa3/U5/Z (CND2IX2)                   0.08       3.84 r
+  fa5/fa3/cout2 (full_adder_46)            0.00       3.84 r
+  fa5/fa4/cin (full_adder_45)              0.00       3.84 r
+  fa5/fa4/U4/Z (CND2X2)                    0.09       3.94 f
+  fa5/fa4/U1/Z (CND2IX2)                   0.08       4.01 r
+  fa5/fa4/cout2 (full_adder_45)            0.00       4.01 r
+  fa5/cout3 (four_1bit_12)                 0.00       4.01 r
+  fa6/cin (four_1bit_11)                   0.00       4.01 r
+  fa6/fa1/cin (full_adder_44)              0.00       4.01 r
+  fa6/fa1/U7/Z (CND2X2)                    0.09       4.10 f
+  fa6/fa1/U2/Z (CND2IX2)                   0.08       4.18 r
+  fa6/fa1/cout2 (full_adder_44)            0.00       4.18 r
+  fa6/fa2/cin (full_adder_43)              0.00       4.18 r
+  fa6/fa2/U7/Z (CND2X2)                    0.09       4.27 f
+  fa6/fa2/U2/Z (CND2IX2)                   0.07       4.35 r
+  fa6/fa2/cout2 (full_adder_43)            0.00       4.35 r
+  fa6/fa3/cin (full_adder_42)              0.00       4.35 r
+  fa6/fa3/U5/Z (CND2IX2)                   0.09       4.44 f
+  fa6/fa3/U8/Z (CND2X2)                    0.07       4.52 r
+  fa6/fa3/cout2 (full_adder_42)            0.00       4.52 r
+  fa6/fa4/cin (full_adder_41)              0.00       4.52 r
+  fa6/fa4/U7/Z (CND2IX2)                   0.09       4.61 f
+  fa6/fa4/U5/Z (CND2IX2)                   0.07       4.68 r
+  fa6/fa4/cout2 (full_adder_41)            0.00       4.68 r
+  fa6/cout3 (four_1bit_11)                 0.00       4.68 r
+  fa7/cin (four_1bit_10)                   0.00       4.68 r
+  fa7/fa1/cin (full_adder_40)              0.00       4.68 r
+  fa7/fa1/U5/Z (CND2IX2)                   0.09       4.77 f
+  fa7/fa1/U7/Z (CND2IX2)                   0.07       4.85 r
+  fa7/fa1/cout2 (full_adder_40)            0.00       4.85 r
+  fa7/fa2/cin (full_adder_39)              0.00       4.85 r
+  fa7/fa2/U7/Z (CND2IX2)                   0.09       4.94 f
+  fa7/fa2/U2/Z (CND2IX2)                   0.07       5.01 r
+  fa7/fa2/cout2 (full_adder_39)            0.00       5.01 r
+  fa7/fa3/cin (full_adder_38)              0.00       5.01 r
+  fa7/fa3/U5/Z (CND2IX2)                   0.09       5.11 f
+  fa7/fa3/U7/Z (CND2IX2)                   0.07       5.18 r
+  fa7/fa3/cout2 (full_adder_38)            0.00       5.18 r
+  fa7/fa4/cin (full_adder_37)              0.00       5.18 r
+  fa7/fa4/U5/Z (CND2IX2)                   0.09       5.27 f
+  fa7/fa4/U7/Z (CND2IX2)                   0.07       5.35 r
+  fa7/fa4/cout2 (full_adder_37)            0.00       5.35 r
+  fa7/cout3 (four_1bit_10)                 0.00       5.35 r
+  fa8/cin (four_1bit_9)                    0.00       5.35 r
+  fa8/fa1/cin (full_adder_36)              0.00       5.35 r
+  fa8/fa1/U5/Z (CND2IX2)                   0.09       5.44 f
+  fa8/fa1/U8/Z (CND2X2)                    0.08       5.52 r
+  fa8/fa1/cout2 (full_adder_36)            0.00       5.52 r
+  fa8/fa2/cin (full_adder_35)              0.00       5.52 r
+  fa8/fa2/U2/Z (CND2X2)                    0.09       5.61 f
+  fa8/fa2/U4/Z (CND2X2)                    0.08       5.68 r
+  fa8/fa2/cout2 (full_adder_35)            0.00       5.68 r
+  fa8/fa3/cin (full_adder_34)              0.00       5.68 r
+  fa8/fa3/U4/Z (CND2X2)                    0.09       5.78 f
+  fa8/fa3/U5/Z (CND2X2)                    0.08       5.85 r
+  fa8/fa3/cout2 (full_adder_34)            0.00       5.85 r
+  fa8/fa4/cin (full_adder_33)              0.00       5.85 r
+  fa8/fa4/U7/Z (CND2X2)                    0.09       5.95 f
+  fa8/fa4/U5/Z (CND2IX2)                   0.08       6.02 r
+  fa8/fa4/cout2 (full_adder_33)            0.00       6.02 r
+  fa8/cout3 (four_1bit_9)                  0.00       6.02 r
+  fa9/cin (four_1bit_8)                    0.00       6.02 r
+  fa9/fa1/cin (full_adder_32)              0.00       6.02 r
+  fa9/fa1/U4/Z (CND2X2)                    0.09       6.12 f
+  fa9/fa1/U1/Z (CND2IX2)                   0.08       6.19 r
+  fa9/fa1/cout2 (full_adder_32)            0.00       6.19 r
+  fa9/fa2/cin (full_adder_31)              0.00       6.19 r
+  fa9/fa2/U5/Z (CND2X2)                    0.09       6.28 f
+  fa9/fa2/U2/Z (CND2IX2)                   0.08       6.36 r
+  fa9/fa2/cout2 (full_adder_31)            0.00       6.36 r
+  fa9/fa3/cin (full_adder_30)              0.00       6.36 r
+  fa9/fa3/U6/Z (CND2X2)                    0.09       6.45 f
+  fa9/fa3/U7/Z (CND2X2)                    0.07       6.53 r
+  fa9/fa3/cout2 (full_adder_30)            0.00       6.53 r
+  fa9/fa4/cin (full_adder_29)              0.00       6.53 r
+  fa9/fa4/U5/Z (CND2IX2)                   0.09       6.62 f
+  fa9/fa4/U7/Z (CND2IX2)                   0.07       6.69 r
+  fa9/fa4/cout2 (full_adder_29)            0.00       6.69 r
+  fa9/cout3 (four_1bit_8)                  0.00       6.69 r
+  fa10/cin (four_1bit_7)                   0.00       6.69 r
+  fa10/fa1/cin (full_adder_28)             0.00       6.69 r
+  fa10/fa1/U7/Z (CND2IX2)                  0.09       6.79 f
+  fa10/fa1/U2/Z (CND2IX2)                  0.07       6.86 r
+  fa10/fa1/cout2 (full_adder_28)           0.00       6.86 r
+  fa10/fa2/cin (full_adder_27)             0.00       6.86 r
+  fa10/fa2/U7/Z (CND2IX2)                  0.09       6.95 f
+  fa10/fa2/U5/Z (CND2IX2)                  0.08       7.03 r
+  fa10/fa2/cout2 (full_adder_27)           0.00       7.03 r
+  fa10/fa3/cin (full_adder_26)             0.00       7.03 r
+  fa10/fa3/U7/Z (CND2X2)                   0.09       7.12 f
+  fa10/fa3/U5/Z (CND2IX2)                  0.07       7.20 r
+  fa10/fa3/cout2 (full_adder_26)           0.00       7.20 r
+  fa10/fa4/cin (full_adder_25)             0.00       7.20 r
+  fa10/fa4/U5/Z (CND2IX2)                  0.09       7.29 f
+  fa10/fa4/U7/Z (CND2IX2)                  0.08       7.36 r
+  fa10/fa4/cout2 (full_adder_25)           0.00       7.36 r
+  fa10/cout3 (four_1bit_7)                 0.00       7.36 r
+  fa11/cin (four_1bit_6)                   0.00       7.36 r
+  fa11/fa1/cin (full_adder_24)             0.00       7.36 r
+  fa11/fa1/U7/Z (CND2X2)                   0.09       7.46 f
+  fa11/fa1/U5/Z (CND2IX2)                  0.08       7.53 r
+  fa11/fa1/cout2 (full_adder_24)           0.00       7.53 r
+  fa11/fa2/cin (full_adder_23)             0.00       7.53 r
+  fa11/fa2/U7/Z (CND2X2)                   0.09       7.63 f
+  fa11/fa2/U2/Z (CND2IX2)                  0.08       7.70 r
+  fa11/fa2/cout2 (full_adder_23)           0.00       7.70 r
+  fa11/fa3/cin (full_adder_22)             0.00       7.70 r
+  fa11/fa3/U4/Z (CND2X2)                   0.09       7.80 f
+  fa11/fa3/U1/Z (CND2IX2)                  0.08       7.87 r
+  fa11/fa3/cout2 (full_adder_22)           0.00       7.87 r
+  fa11/fa4/cin (full_adder_21)             0.00       7.87 r
+  fa11/fa4/U5/Z (CND2X2)                   0.09       7.96 f
+  fa11/fa4/U1/Z (CND2IX2)                  0.08       8.04 r
+  fa11/fa4/cout2 (full_adder_21)           0.00       8.04 r
+  fa11/cout3 (four_1bit_6)                 0.00       8.04 r
+  fa12/cin (four_1bit_5)                   0.00       8.04 r
+  fa12/fa1/cin (full_adder_20)             0.00       8.04 r
+  fa12/fa1/U7/Z (CND2X2)                   0.09       8.13 f
+  fa12/fa1/U5/Z (CND2IX2)                  0.08       8.21 r
+  fa12/fa1/cout2 (full_adder_20)           0.00       8.21 r
+  fa12/fa2/cin (full_adder_19)             0.00       8.21 r
+  fa12/fa2/U7/Z (CND2X2)                   0.09       8.30 f
+  fa12/fa2/U2/Z (CND2IX2)                  0.08       8.38 r
+  fa12/fa2/cout2 (full_adder_19)           0.00       8.38 r
+  fa12/fa3/cin (full_adder_18)             0.00       8.38 r
+  fa12/fa3/U7/Z (CND2X2)                   0.09       8.47 f
+  fa12/fa3/U5/Z (CND2IX2)                  0.08       8.55 r
+  fa12/fa3/cout2 (full_adder_18)           0.00       8.55 r
+  fa12/fa4/cin (full_adder_17)             0.00       8.55 r
+  fa12/fa4/U2/Z (CND2X2)                   0.09       8.64 f
+  fa12/fa4/U4/Z (CND2X2)                   0.07       8.72 r
+  fa12/fa4/cout2 (full_adder_17)           0.00       8.72 r
+  fa12/cout3 (four_1bit_5)                 0.00       8.72 r
+  fa13/cin (four_1bit_4)                   0.00       8.72 r
+  fa13/fa1/cin (full_adder_16)             0.00       8.72 r
+  fa13/fa1/U7/Z (CND2IX2)                  0.09       8.81 f
+  fa13/fa1/U5/Z (CND2IX2)                  0.08       8.88 r
+  fa13/fa1/cout2 (full_adder_16)           0.00       8.88 r
+  fa13/fa2/cin (full_adder_15)             0.00       8.88 r
+  fa13/fa2/U4/Z (CND2X2)                   0.09       8.98 f
+  fa13/fa2/U1/Z (CND2IX2)                  0.08       9.05 r
+  fa13/fa2/cout2 (full_adder_15)           0.00       9.05 r
+  fa13/fa3/cin (full_adder_14)             0.00       9.05 r
+  fa13/fa3/U7/Z (CND2X2)                   0.09       9.14 f
+  fa13/fa3/U5/Z (CND2IX2)                  0.08       9.22 r
+  fa13/fa3/cout2 (full_adder_14)           0.00       9.22 r
+  fa13/fa4/cin (full_adder_13)             0.00       9.22 r
+  fa13/fa4/U7/Z (CND2X2)                   0.09       9.31 f
+  fa13/fa4/U5/Z (CND2IX2)                  0.08       9.39 r
+  fa13/fa4/cout2 (full_adder_13)           0.00       9.39 r
+  fa13/cout3 (four_1bit_4)                 0.00       9.39 r
+  fa14/cin (four_1bit_3)                   0.00       9.39 r
+  fa14/fa1/cin (full_adder_12)             0.00       9.39 r
+  fa14/fa1/U5/Z (CND2X2)                   0.09       9.48 f
+  fa14/fa1/U2/Z (CND2IX2)                  0.08       9.56 r
+  fa14/fa1/cout2 (full_adder_12)           0.00       9.56 r
+  fa14/fa2/cin (full_adder_11)             0.00       9.56 r
+  fa14/fa2/U7/Z (CND2X2)                   0.09       9.65 f
+  fa14/fa2/U5/Z (CND2IX2)                  0.07       9.73 r
+  fa14/fa2/cout2 (full_adder_11)           0.00       9.73 r
+  fa14/fa3/cin (full_adder_10)             0.00       9.73 r
+  fa14/fa3/U5/Z (CND2IX2)                  0.09       9.82 f
+  fa14/fa3/U8/Z (CND2X2)                   0.07       9.89 r
+  fa14/fa3/cout2 (full_adder_10)           0.00       9.89 r
+  fa14/fa4/cin (full_adder_9)              0.00       9.89 r
+  fa14/fa4/U5/Z (CND2IX2)                  0.09       9.98 f
+  fa14/fa4/U6/Z (CND2IX2)                  0.08      10.06 r
+  fa14/fa4/cout2 (full_adder_9)            0.00      10.06 r
+  fa14/cout3 (four_1bit_3)                 0.00      10.06 r
+  fa15/cin (four_1bit_2)                   0.00      10.06 r
+  fa15/fa1/cin (full_adder_8)              0.00      10.06 r
+  fa15/fa1/U5/Z (CND2X2)                   0.09      10.15 f
+  fa15/fa1/U2/Z (CND2IX2)                  0.08      10.23 r
+  fa15/fa1/cout2 (full_adder_8)            0.00      10.23 r
+  fa15/fa2/cin (full_adder_7)              0.00      10.23 r
+  fa15/fa2/U7/Z (CND2X2)                   0.09      10.32 f
+  fa15/fa2/U5/Z (CND2IX2)                  0.07      10.40 r
+  fa15/fa2/cout2 (full_adder_7)            0.00      10.40 r
+  fa15/fa3/cin (full_adder_6)              0.00      10.40 r
+  fa15/fa3/U4/Z (CND2IX2)                  0.09      10.49 f
+  fa15/fa3/U7/Z (CND2X2)                   0.08      10.56 r
+  fa15/fa3/cout2 (full_adder_6)            0.00      10.56 r
+  fa15/fa4/cin (full_adder_5)              0.00      10.56 r
+  fa15/fa4/U6/Z (CND2X2)                   0.09      10.66 f
+  fa15/fa4/U4/Z (CND2IX2)                  0.07      10.73 r
+  fa15/fa4/cout2 (full_adder_5)            0.00      10.73 r
+  fa15/cout3 (four_1bit_2)                 0.00      10.73 r
+  fa16/cin (four_1bit_1)                   0.00      10.73 r
+  fa16/fa1/cin (full_adder_4)              0.00      10.73 r
+  fa16/fa1/U4/Z (CND2IX2)                  0.09      10.82 f
+  fa16/fa1/U5/Z (CND2IX2)                  0.08      10.90 r
+  fa16/fa1/cout2 (full_adder_4)            0.00      10.90 r
+  fa16/fa2/cin (full_adder_3)              0.00      10.90 r
+  fa16/fa2/U5/Z (CND2X2)                   0.09      10.99 f
+  fa16/fa2/U6/Z (CND2X2)                   0.08      11.07 r
+  fa16/fa2/cout2 (full_adder_3)            0.00      11.07 r
+  fa16/fa3/cin (full_adder_2)              0.00      11.07 r
+  fa16/fa3/U1/Z (CNIVX2)                   0.19      11.26 r
+  fa16/fa3/U5/Z (CENX2)                    0.19      11.45 r
+  fa16/fa3/sum2 (full_adder_2)             0.00      11.45 r
+  fa16/sum3[2] (four_1bit_1)               0.00      11.45 r
+  sum_reg[62]/D (CFD2QX2)                  0.00      11.45 r
+  data arrival time                                  11.45
+
+  clock clock (rise edge)                 12.04      12.04
+  clock network delay (propagated)         0.00      12.04
+  clock uncertainty                       -0.25      11.79
+  sum_reg[62]/CP (CFD2QX2)                 0.00      11.79 r
+  library setup time                      -0.33      11.46
+  data required time                                 11.46
+  -----------------------------------------------------------
+  data required time                                 11.46
+  data arrival time                                 -11.45
+  -----------------------------------------------------------
+  slack (MET)                                         0.01
+
+
+  Startpoint: b_reg[1] (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: sum_reg[61]
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clock (rise edge)                  0.00       0.00
+  clock network delay (propagated)         0.00       0.00
+  b_reg[1]/CP (CFD2QX1)                    0.00       0.00 r
+  b_reg[1]/Q (CFD2QX1)                     0.46       0.46 f
+  fa1/b[1] (four_0bit)                     0.00       0.46 f
+  fa1/ffa1/b (full_adder_0)                0.00       0.46 f
+  fa1/ffa1/U2/Z (CIVX2)                    0.06       0.52 r
+  fa1/ffa1/U4/Z (CND2X1)                   0.09       0.61 f
+  fa1/ffa1/U9/Z (CND2X1)                   0.11       0.72 r
+  fa1/ffa1/U6/Z (CND2X2)                   0.11       0.83 f
+  fa1/ffa1/U7/Z (CND2IX2)                  0.08       0.90 r
+  fa1/ffa1/cout2 (full_adder_0)            0.00       0.90 r
+  fa1/ffa2/cin (full_adder_62)             0.00       0.90 r
+  fa1/ffa2/U5/Z (CND2X2)                   0.09       1.00 f
+  fa1/ffa2/U2/Z (CND2IX2)                  0.08       1.07 r
+  fa1/ffa2/cout2 (full_adder_62)           0.00       1.07 r
+  fa1/ffa3/cin (full_adder_61)             0.00       1.07 r
+  fa1/ffa3/U4/Z (CND2X2)                   0.09       1.17 f
+  fa1/ffa3/U5/Z (CND2X2)                   0.08       1.24 r
+  fa1/ffa3/cout2 (full_adder_61)           0.00       1.24 r
+  fa1/cout4 (four_0bit)                    0.00       1.24 r
+  fa2/cin (four_1bit_0)                    0.00       1.24 r
+  fa2/fa1/cin (full_adder_60)              0.00       1.24 r
+  fa2/fa1/U6/Z (CND2X2)                    0.09       1.34 f
+  fa2/fa1/U7/Z (CND2X2)                    0.07       1.41 r
+  fa2/fa1/cout2 (full_adder_60)            0.00       1.41 r
+  fa2/fa2/cin (full_adder_59)              0.00       1.41 r
+  fa2/fa2/U6/Z (CIVX2)                     0.07       1.48 f
+  fa2/fa2/U8/Z (COND2X2)                   0.15       1.62 r
+  fa2/fa2/cout2 (full_adder_59)            0.00       1.62 r
+  fa2/fa3/cin (full_adder_58)              0.00       1.62 r
+  fa2/fa3/U7/Z (CND2X2)                    0.13       1.76 f
+  fa2/fa3/U5/Z (CND2IX2)                   0.08       1.83 r
+  fa2/fa3/cout2 (full_adder_58)            0.00       1.83 r
+  fa2/fa4/cin (full_adder_57)              0.00       1.83 r
+  fa2/fa4/U7/Z (CND2X2)                    0.09       1.92 f
+  fa2/fa4/U5/Z (CND2IX2)                   0.07       2.00 r
+  fa2/fa4/cout2 (full_adder_57)            0.00       2.00 r
+  fa2/cout3 (four_1bit_0)                  0.00       2.00 r
+  fa3/cin (four_1bit_14)                   0.00       2.00 r
+  fa3/fa1/cin (full_adder_56)              0.00       2.00 r
+  fa3/fa1/U6/Z (CND2IX2)                   0.09       2.09 f
+  fa3/fa1/U7/Z (CND2IX2)                   0.07       2.17 r
+  fa3/fa1/cout2 (full_adder_56)            0.00       2.17 r
+  fa3/fa2/cin (full_adder_55)              0.00       2.17 r
+  fa3/fa2/U7/Z (CND2IX2)                   0.09       2.26 f
+  fa3/fa2/U5/Z (CND2IX2)                   0.07       2.33 r
+  fa3/fa2/cout2 (full_adder_55)            0.00       2.33 r
+  fa3/fa3/cin (full_adder_54)              0.00       2.33 r
+  fa3/fa3/U7/Z (CND2IX2)                   0.09       2.42 f
+  fa3/fa3/U5/Z (CND2IX2)                   0.08       2.50 r
+  fa3/fa3/cout2 (full_adder_54)            0.00       2.50 r
+  fa3/fa4/cin (full_adder_53)              0.00       2.50 r
+  fa3/fa4/U4/Z (CND2X2)                    0.09       2.59 f
+  fa3/fa4/U1/Z (CND2IX2)                   0.07       2.67 r
+  fa3/fa4/cout2 (full_adder_53)            0.00       2.67 r
+  fa3/cout3 (four_1bit_14)                 0.00       2.67 r
+  fa4/cin (four_1bit_13)                   0.00       2.67 r
+  fa4/fa1/cin (full_adder_52)              0.00       2.67 r
+  fa4/fa1/U5/Z (CND2IX2)                   0.09       2.76 f
+  fa4/fa1/U8/Z (CND2X2)                    0.07       2.84 r
+  fa4/fa1/cout2 (full_adder_52)            0.00       2.84 r
+  fa4/fa2/cin (full_adder_51)              0.00       2.84 r
+  fa4/fa2/U7/Z (CND2IX2)                   0.09       2.93 f
+  fa4/fa2/U1/Z (CND2IX2)                   0.07       3.00 r
+  fa4/fa2/cout2 (full_adder_51)            0.00       3.00 r
+  fa4/fa3/cin (full_adder_50)              0.00       3.00 r
+  fa4/fa3/U7/Z (CND2IX2)                   0.09       3.09 f
+  fa4/fa3/U5/Z (CND2IX2)                   0.07       3.17 r
+  fa4/fa3/cout2 (full_adder_50)            0.00       3.17 r
+  fa4/fa4/cin (full_adder_49)              0.00       3.17 r
+  fa4/fa4/U5/Z (CND2IX2)                   0.09       3.26 f
+  fa4/fa4/U8/Z (CND2X2)                    0.08       3.34 r
+  fa4/fa4/cout2 (full_adder_49)            0.00       3.34 r
+  fa4/cout3 (four_1bit_13)                 0.00       3.34 r
+  fa5/cin (four_1bit_12)                   0.00       3.34 r
+  fa5/fa1/cin (full_adder_48)              0.00       3.34 r
+  fa5/fa1/U4/Z (CND2X2)                    0.09       3.43 f
+  fa5/fa1/U1/Z (CND2IX2)                   0.08       3.50 r
+  fa5/fa1/cout2 (full_adder_48)            0.00       3.50 r
+  fa5/fa2/cin (full_adder_47)              0.00       3.50 r
+  fa5/fa2/U7/Z (CND2X2)                    0.09       3.60 f
+  fa5/fa2/U5/Z (CND2IX2)                   0.08       3.67 r
+  fa5/fa2/cout2 (full_adder_47)            0.00       3.67 r
+  fa5/fa3/cin (full_adder_46)              0.00       3.67 r
+  fa5/fa3/U7/Z (CND2X2)                    0.09       3.77 f
+  fa5/fa3/U5/Z (CND2IX2)                   0.08       3.84 r
+  fa5/fa3/cout2 (full_adder_46)            0.00       3.84 r
+  fa5/fa4/cin (full_adder_45)              0.00       3.84 r
+  fa5/fa4/U4/Z (CND2X2)                    0.09       3.94 f
+  fa5/fa4/U1/Z (CND2IX2)                   0.08       4.01 r
+  fa5/fa4/cout2 (full_adder_45)            0.00       4.01 r
+  fa5/cout3 (four_1bit_12)                 0.00       4.01 r
+  fa6/cin (four_1bit_11)                   0.00       4.01 r
+  fa6/fa1/cin (full_adder_44)              0.00       4.01 r
+  fa6/fa1/U7/Z (CND2X2)                    0.09       4.10 f
+  fa6/fa1/U2/Z (CND2IX2)                   0.08       4.18 r
+  fa6/fa1/cout2 (full_adder_44)            0.00       4.18 r
+  fa6/fa2/cin (full_adder_43)              0.00       4.18 r
+  fa6/fa2/U7/Z (CND2X2)                    0.09       4.27 f
+  fa6/fa2/U2/Z (CND2IX2)                   0.07       4.35 r
+  fa6/fa2/cout2 (full_adder_43)            0.00       4.35 r
+  fa6/fa3/cin (full_adder_42)              0.00       4.35 r
+  fa6/fa3/U5/Z (CND2IX2)                   0.09       4.44 f
+  fa6/fa3/U8/Z (CND2X2)                    0.07       4.52 r
+  fa6/fa3/cout2 (full_adder_42)            0.00       4.52 r
+  fa6/fa4/cin (full_adder_41)              0.00       4.52 r
+  fa6/fa4/U7/Z (CND2IX2)                   0.09       4.61 f
+  fa6/fa4/U5/Z (CND2IX2)                   0.07       4.68 r
+  fa6/fa4/cout2 (full_adder_41)            0.00       4.68 r
+  fa6/cout3 (four_1bit_11)                 0.00       4.68 r
+  fa7/cin (four_1bit_10)                   0.00       4.68 r
+  fa7/fa1/cin (full_adder_40)              0.00       4.68 r
+  fa7/fa1/U5/Z (CND2IX2)                   0.09       4.77 f
+  fa7/fa1/U7/Z (CND2IX2)                   0.07       4.85 r
+  fa7/fa1/cout2 (full_adder_40)            0.00       4.85 r
+  fa7/fa2/cin (full_adder_39)              0.00       4.85 r
+  fa7/fa2/U7/Z (CND2IX2)                   0.09       4.94 f
+  fa7/fa2/U2/Z (CND2IX2)                   0.07       5.01 r
+  fa7/fa2/cout2 (full_adder_39)            0.00       5.01 r
+  fa7/fa3/cin (full_adder_38)              0.00       5.01 r
+  fa7/fa3/U5/Z (CND2IX2)                   0.09       5.11 f
+  fa7/fa3/U7/Z (CND2IX2)                   0.07       5.18 r
+  fa7/fa3/cout2 (full_adder_38)            0.00       5.18 r
+  fa7/fa4/cin (full_adder_37)              0.00       5.18 r
+  fa7/fa4/U5/Z (CND2IX2)                   0.09       5.27 f
+  fa7/fa4/U7/Z (CND2IX2)                   0.07       5.35 r
+  fa7/fa4/cout2 (full_adder_37)            0.00       5.35 r
+  fa7/cout3 (four_1bit_10)                 0.00       5.35 r
+  fa8/cin (four_1bit_9)                    0.00       5.35 r
+  fa8/fa1/cin (full_adder_36)              0.00       5.35 r
+  fa8/fa1/U5/Z (CND2IX2)                   0.09       5.44 f
+  fa8/fa1/U8/Z (CND2X2)                    0.08       5.52 r
+  fa8/fa1/cout2 (full_adder_36)            0.00       5.52 r
+  fa8/fa2/cin (full_adder_35)              0.00       5.52 r
+  fa8/fa2/U2/Z (CND2X2)                    0.09       5.61 f
+  fa8/fa2/U4/Z (CND2X2)                    0.08       5.68 r
+  fa8/fa2/cout2 (full_adder_35)            0.00       5.68 r
+  fa8/fa3/cin (full_adder_34)              0.00       5.68 r
+  fa8/fa3/U4/Z (CND2X2)                    0.09       5.78 f
+  fa8/fa3/U5/Z (CND2X2)                    0.08       5.85 r
+  fa8/fa3/cout2 (full_adder_34)            0.00       5.85 r
+  fa8/fa4/cin (full_adder_33)              0.00       5.85 r
+  fa8/fa4/U7/Z (CND2X2)                    0.09       5.95 f
+  fa8/fa4/U5/Z (CND2IX2)                   0.08       6.02 r
+  fa8/fa4/cout2 (full_adder_33)            0.00       6.02 r
+  fa8/cout3 (four_1bit_9)                  0.00       6.02 r
+  fa9/cin (four_1bit_8)                    0.00       6.02 r
+  fa9/fa1/cin (full_adder_32)              0.00       6.02 r
+  fa9/fa1/U4/Z (CND2X2)                    0.09       6.12 f
+  fa9/fa1/U1/Z (CND2IX2)                   0.08       6.19 r
+  fa9/fa1/cout2 (full_adder_32)            0.00       6.19 r
+  fa9/fa2/cin (full_adder_31)              0.00       6.19 r
+  fa9/fa2/U5/Z (CND2X2)                    0.09       6.28 f
+  fa9/fa2/U2/Z (CND2IX2)                   0.08       6.36 r
+  fa9/fa2/cout2 (full_adder_31)            0.00       6.36 r
+  fa9/fa3/cin (full_adder_30)              0.00       6.36 r
+  fa9/fa3/U6/Z (CND2X2)                    0.09       6.45 f
+  fa9/fa3/U7/Z (CND2X2)                    0.07       6.53 r
+  fa9/fa3/cout2 (full_adder_30)            0.00       6.53 r
+  fa9/fa4/cin (full_adder_29)              0.00       6.53 r
+  fa9/fa4/U5/Z (CND2IX2)                   0.09       6.62 f
+  fa9/fa4/U7/Z (CND2IX2)                   0.07       6.69 r
+  fa9/fa4/cout2 (full_adder_29)            0.00       6.69 r
+  fa9/cout3 (four_1bit_8)                  0.00       6.69 r
+  fa10/cin (four_1bit_7)                   0.00       6.69 r
+  fa10/fa1/cin (full_adder_28)             0.00       6.69 r
+  fa10/fa1/U7/Z (CND2IX2)                  0.09       6.79 f
+  fa10/fa1/U2/Z (CND2IX2)                  0.07       6.86 r
+  fa10/fa1/cout2 (full_adder_28)           0.00       6.86 r
+  fa10/fa2/cin (full_adder_27)             0.00       6.86 r
+  fa10/fa2/U7/Z (CND2IX2)                  0.09       6.95 f
+  fa10/fa2/U5/Z (CND2IX2)                  0.08       7.03 r
+  fa10/fa2/cout2 (full_adder_27)           0.00       7.03 r
+  fa10/fa3/cin (full_adder_26)             0.00       7.03 r
+  fa10/fa3/U7/Z (CND2X2)                   0.09       7.12 f
+  fa10/fa3/U5/Z (CND2IX2)                  0.07       7.20 r
+  fa10/fa3/cout2 (full_adder_26)           0.00       7.20 r
+  fa10/fa4/cin (full_adder_25)             0.00       7.20 r
+  fa10/fa4/U5/Z (CND2IX2)                  0.09       7.29 f
+  fa10/fa4/U7/Z (CND2IX2)                  0.08       7.36 r
+  fa10/fa4/cout2 (full_adder_25)           0.00       7.36 r
+  fa10/cout3 (four_1bit_7)                 0.00       7.36 r
+  fa11/cin (four_1bit_6)                   0.00       7.36 r
+  fa11/fa1/cin (full_adder_24)             0.00       7.36 r
+  fa11/fa1/U7/Z (CND2X2)                   0.09       7.46 f
+  fa11/fa1/U5/Z (CND2IX2)                  0.08       7.53 r
+  fa11/fa1/cout2 (full_adder_24)           0.00       7.53 r
+  fa11/fa2/cin (full_adder_23)             0.00       7.53 r
+  fa11/fa2/U7/Z (CND2X2)                   0.09       7.63 f
+  fa11/fa2/U2/Z (CND2IX2)                  0.08       7.70 r
+  fa11/fa2/cout2 (full_adder_23)           0.00       7.70 r
+  fa11/fa3/cin (full_adder_22)             0.00       7.70 r
+  fa11/fa3/U4/Z (CND2X2)                   0.09       7.80 f
+  fa11/fa3/U1/Z (CND2IX2)                  0.08       7.87 r
+  fa11/fa3/cout2 (full_adder_22)           0.00       7.87 r
+  fa11/fa4/cin (full_adder_21)             0.00       7.87 r
+  fa11/fa4/U5/Z (CND2X2)                   0.09       7.96 f
+  fa11/fa4/U1/Z (CND2IX2)                  0.08       8.04 r
+  fa11/fa4/cout2 (full_adder_21)           0.00       8.04 r
+  fa11/cout3 (four_1bit_6)                 0.00       8.04 r
+  fa12/cin (four_1bit_5)                   0.00       8.04 r
+  fa12/fa1/cin (full_adder_20)             0.00       8.04 r
+  fa12/fa1/U7/Z (CND2X2)                   0.09       8.13 f
+  fa12/fa1/U5/Z (CND2IX2)                  0.08       8.21 r
+  fa12/fa1/cout2 (full_adder_20)           0.00       8.21 r
+  fa12/fa2/cin (full_adder_19)             0.00       8.21 r
+  fa12/fa2/U7/Z (CND2X2)                   0.09       8.30 f
+  fa12/fa2/U2/Z (CND2IX2)                  0.08       8.38 r
+  fa12/fa2/cout2 (full_adder_19)           0.00       8.38 r
+  fa12/fa3/cin (full_adder_18)             0.00       8.38 r
+  fa12/fa3/U7/Z (CND2X2)                   0.09       8.47 f
+  fa12/fa3/U5/Z (CND2IX2)                  0.08       8.55 r
+  fa12/fa3/cout2 (full_adder_18)           0.00       8.55 r
+  fa12/fa4/cin (full_adder_17)             0.00       8.55 r
+  fa12/fa4/U2/Z (CND2X2)                   0.09       8.64 f
+  fa12/fa4/U4/Z (CND2X2)                   0.07       8.72 r
+  fa12/fa4/cout2 (full_adder_17)           0.00       8.72 r
+  fa12/cout3 (four_1bit_5)                 0.00       8.72 r
+  fa13/cin (four_1bit_4)                   0.00       8.72 r
+  fa13/fa1/cin (full_adder_16)             0.00       8.72 r
+  fa13/fa1/U7/Z (CND2IX2)                  0.09       8.81 f
+  fa13/fa1/U5/Z (CND2IX2)                  0.08       8.88 r
+  fa13/fa1/cout2 (full_adder_16)           0.00       8.88 r
+  fa13/fa2/cin (full_adder_15)             0.00       8.88 r
+  fa13/fa2/U4/Z (CND2X2)                   0.09       8.98 f
+  fa13/fa2/U1/Z (CND2IX2)                  0.08       9.05 r
+  fa13/fa2/cout2 (full_adder_15)           0.00       9.05 r
+  fa13/fa3/cin (full_adder_14)             0.00       9.05 r
+  fa13/fa3/U7/Z (CND2X2)                   0.09       9.14 f
+  fa13/fa3/U5/Z (CND2IX2)                  0.08       9.22 r
+  fa13/fa3/cout2 (full_adder_14)           0.00       9.22 r
+  fa13/fa4/cin (full_adder_13)             0.00       9.22 r
+  fa13/fa4/U7/Z (CND2X2)                   0.09       9.31 f
+  fa13/fa4/U5/Z (CND2IX2)                  0.08       9.39 r
+  fa13/fa4/cout2 (full_adder_13)           0.00       9.39 r
+  fa13/cout3 (four_1bit_4)                 0.00       9.39 r
+  fa14/cin (four_1bit_3)                   0.00       9.39 r
+  fa14/fa1/cin (full_adder_12)             0.00       9.39 r
+  fa14/fa1/U5/Z (CND2X2)                   0.09       9.48 f
+  fa14/fa1/U2/Z (CND2IX2)                  0.08       9.56 r
+  fa14/fa1/cout2 (full_adder_12)           0.00       9.56 r
+  fa14/fa2/cin (full_adder_11)             0.00       9.56 r
+  fa14/fa2/U7/Z (CND2X2)                   0.09       9.65 f
+  fa14/fa2/U5/Z (CND2IX2)                  0.07       9.73 r
+  fa14/fa2/cout2 (full_adder_11)           0.00       9.73 r
+  fa14/fa3/cin (full_adder_10)             0.00       9.73 r
+  fa14/fa3/U5/Z (CND2IX2)                  0.09       9.82 f
+  fa14/fa3/U8/Z (CND2X2)                   0.07       9.89 r
+  fa14/fa3/cout2 (full_adder_10)           0.00       9.89 r
+  fa14/fa4/cin (full_adder_9)              0.00       9.89 r
+  fa14/fa4/U5/Z (CND2IX2)                  0.09       9.98 f
+  fa14/fa4/U6/Z (CND2IX2)                  0.08      10.06 r
+  fa14/fa4/cout2 (full_adder_9)            0.00      10.06 r
+  fa14/cout3 (four_1bit_3)                 0.00      10.06 r
+  fa15/cin (four_1bit_2)                   0.00      10.06 r
+  fa15/fa1/cin (full_adder_8)              0.00      10.06 r
+  fa15/fa1/U5/Z (CND2X2)                   0.09      10.15 f
+  fa15/fa1/U2/Z (CND2IX2)                  0.08      10.23 r
+  fa15/fa1/cout2 (full_adder_8)            0.00      10.23 r
+  fa15/fa2/cin (full_adder_7)              0.00      10.23 r
+  fa15/fa2/U7/Z (CND2X2)                   0.09      10.32 f
+  fa15/fa2/U5/Z (CND2IX2)                  0.07      10.40 r
+  fa15/fa2/cout2 (full_adder_7)            0.00      10.40 r
+  fa15/fa3/cin (full_adder_6)              0.00      10.40 r
+  fa15/fa3/U4/Z (CND2IX2)                  0.09      10.49 f
+  fa15/fa3/U7/Z (CND2X2)                   0.08      10.56 r
+  fa15/fa3/cout2 (full_adder_6)            0.00      10.56 r
+  fa15/fa4/cin (full_adder_5)              0.00      10.56 r
+  fa15/fa4/U6/Z (CND2X2)                   0.09      10.66 f
+  fa15/fa4/U4/Z (CND2IX2)                  0.07      10.73 r
+  fa15/fa4/cout2 (full_adder_5)            0.00      10.73 r
+  fa15/cout3 (four_1bit_2)                 0.00      10.73 r
+  fa16/cin (four_1bit_1)                   0.00      10.73 r
+  fa16/fa1/cin (full_adder_4)              0.00      10.73 r
+  fa16/fa1/U4/Z (CND2IX2)                  0.09      10.82 f
+  fa16/fa1/U5/Z (CND2IX2)                  0.08      10.90 r
+  fa16/fa1/cout2 (full_adder_4)            0.00      10.90 r
+  fa16/fa2/cin (full_adder_3)              0.00      10.90 r
+  fa16/fa2/U1/Z (CIVXL)                    0.08      10.98 f
+  fa16/fa2/U2/Z (CIVXL)                    0.10      11.08 r
+  fa16/fa2/U7/Z (CEOXL)                    0.35      11.44 r
+  fa16/fa2/sum2 (full_adder_3)             0.00      11.44 r
+  fa16/sum3[1] (four_1bit_1)               0.00      11.44 r
+  sum_reg[61]/D (CFD2QX1)                  0.00      11.44 r
+  data arrival time                                  11.44
+
+  clock clock (rise edge)                 12.04      12.04
+  clock network delay (propagated)         0.00      12.04
+  clock uncertainty                       -0.25      11.79
+  sum_reg[61]/CP (CFD2QX1)                 0.00      11.79 r
+  library setup time                      -0.34      11.45
+  data required time                                 11.45
+  -----------------------------------------------------------
+  data required time                                 11.45
+  data arrival time                                 -11.44
+  -----------------------------------------------------------
+  slack (MET)                                         0.01
+
+
+  Startpoint: a_reg[1] (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: sum_reg[57]
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clock (rise edge)                  0.00       0.00
+  clock network delay (propagated)         0.00       0.00
+  a_reg[1]/CP (CFD3QX1)                    0.00       0.00 r
+  a_reg[1]/Q (CFD3QX1)                     0.47       0.47 r
+  fa1/a[1] (four_0bit)                     0.00       0.47 r
+  fa1/ffa1/a (full_adder_0)                0.00       0.47 r
+  fa1/ffa1/U5/Z (CIVX2)                    0.08       0.55 f
+  fa1/ffa1/U3/Z (CND2X1)                   0.09       0.64 r
+  fa1/ffa1/U9/Z (CND2X1)                   0.14       0.78 f
+  fa1/ffa1/U6/Z (CND2X2)                   0.08       0.86 r
+  fa1/ffa1/U7/Z (CND2IX2)                  0.09       0.96 f
+  fa1/ffa1/cout2 (full_adder_0)            0.00       0.96 f
+  fa1/ffa2/cin (full_adder_62)             0.00       0.96 f
+  fa1/ffa2/U5/Z (CND2X2)                   0.07       1.03 r
+  fa1/ffa2/U2/Z (CND2IX2)                  0.09       1.12 f
+  fa1/ffa2/cout2 (full_adder_62)           0.00       1.12 f
+  fa1/ffa3/cin (full_adder_61)             0.00       1.12 f
+  fa1/ffa3/U4/Z (CND2X2)                   0.07       1.19 r
+  fa1/ffa3/U5/Z (CND2X2)                   0.10       1.29 f
+  fa1/ffa3/cout2 (full_adder_61)           0.00       1.29 f
+  fa1/cout4 (four_0bit)                    0.00       1.29 f
+  fa2/cin (four_1bit_0)                    0.00       1.29 f
+  fa2/fa1/cin (full_adder_60)              0.00       1.29 f
+  fa2/fa1/U6/Z (CND2X2)                    0.07       1.36 r
+  fa2/fa1/U7/Z (CND2X2)                    0.09       1.45 f
+  fa2/fa1/cout2 (full_adder_60)            0.00       1.45 f
+  fa2/fa2/cin (full_adder_59)              0.00       1.45 f
+  fa2/fa2/U6/Z (CIVX2)                     0.07       1.52 r
+  fa2/fa2/U8/Z (COND2X2)                   0.13       1.65 f
+  fa2/fa2/cout2 (full_adder_59)            0.00       1.65 f
+  fa2/fa3/cin (full_adder_58)              0.00       1.65 f
+  fa2/fa3/U7/Z (CND2X2)                    0.09       1.75 r
+  fa2/fa3/U5/Z (CND2IX2)                   0.09       1.84 f
+  fa2/fa3/cout2 (full_adder_58)            0.00       1.84 f
+  fa2/fa4/cin (full_adder_57)              0.00       1.84 f
+  fa2/fa4/U7/Z (CND2X2)                    0.07       1.91 r
+  fa2/fa4/U5/Z (CND2IX2)                   0.09       2.01 f
+  fa2/fa4/cout2 (full_adder_57)            0.00       2.01 f
+  fa2/cout3 (four_1bit_0)                  0.00       2.01 f
+  fa3/cin (four_1bit_14)                   0.00       2.01 f
+  fa3/fa1/cin (full_adder_56)              0.00       2.01 f
+  fa3/fa1/U6/Z (CND2IX2)                   0.07       2.08 r
+  fa3/fa1/U7/Z (CND2IX2)                   0.09       2.17 f
+  fa3/fa1/cout2 (full_adder_56)            0.00       2.17 f
+  fa3/fa2/cin (full_adder_55)              0.00       2.17 f
+  fa3/fa2/U7/Z (CND2IX2)                   0.07       2.25 r
+  fa3/fa2/U5/Z (CND2IX2)                   0.09       2.34 f
+  fa3/fa2/cout2 (full_adder_55)            0.00       2.34 f
+  fa3/fa3/cin (full_adder_54)              0.00       2.34 f
+  fa3/fa3/U7/Z (CND2IX2)                   0.07       2.41 r
+  fa3/fa3/U5/Z (CND2IX2)                   0.09       2.51 f
+  fa3/fa3/cout2 (full_adder_54)            0.00       2.51 f
+  fa3/fa4/cin (full_adder_53)              0.00       2.51 f
+  fa3/fa4/U4/Z (CND2X2)                    0.07       2.58 r
+  fa3/fa4/U1/Z (CND2IX2)                   0.09       2.67 f
+  fa3/fa4/cout2 (full_adder_53)            0.00       2.67 f
+  fa3/cout3 (four_1bit_14)                 0.00       2.67 f
+  fa4/cin (four_1bit_13)                   0.00       2.67 f
+  fa4/fa1/cin (full_adder_52)              0.00       2.67 f
+  fa4/fa1/U5/Z (CND2IX2)                   0.07       2.74 r
+  fa4/fa1/U8/Z (CND2X2)                    0.10       2.84 f
+  fa4/fa1/cout2 (full_adder_52)            0.00       2.84 f
+  fa4/fa2/cin (full_adder_51)              0.00       2.84 f
+  fa4/fa2/U7/Z (CND2IX2)                   0.07       2.91 r
+  fa4/fa2/U1/Z (CND2IX2)                   0.09       3.00 f
+  fa4/fa2/cout2 (full_adder_51)            0.00       3.00 f
+  fa4/fa3/cin (full_adder_50)              0.00       3.00 f
+  fa4/fa3/U7/Z (CND2IX2)                   0.07       3.08 r
+  fa4/fa3/U5/Z (CND2IX2)                   0.09       3.17 f
+  fa4/fa3/cout2 (full_adder_50)            0.00       3.17 f
+  fa4/fa4/cin (full_adder_49)              0.00       3.17 f
+  fa4/fa4/U5/Z (CND2IX2)                   0.07       3.24 r
+  fa4/fa4/U8/Z (CND2X2)                    0.10       3.34 f
+  fa4/fa4/cout2 (full_adder_49)            0.00       3.34 f
+  fa4/cout3 (four_1bit_13)                 0.00       3.34 f
+  fa5/cin (four_1bit_12)                   0.00       3.34 f
+  fa5/fa1/cin (full_adder_48)              0.00       3.34 f
+  fa5/fa1/U4/Z (CND2X2)                    0.07       3.41 r
+  fa5/fa1/U1/Z (CND2IX2)                   0.09       3.50 f
+  fa5/fa1/cout2 (full_adder_48)            0.00       3.50 f
+  fa5/fa2/cin (full_adder_47)              0.00       3.50 f
+  fa5/fa2/U7/Z (CND2X2)                    0.07       3.58 r
+  fa5/fa2/U5/Z (CND2IX2)                   0.09       3.67 f
+  fa5/fa2/cout2 (full_adder_47)            0.00       3.67 f
+  fa5/fa3/cin (full_adder_46)              0.00       3.67 f
+  fa5/fa3/U7/Z (CND2X2)                    0.07       3.74 r
+  fa5/fa3/U5/Z (CND2IX2)                   0.09       3.84 f
+  fa5/fa3/cout2 (full_adder_46)            0.00       3.84 f
+  fa5/fa4/cin (full_adder_45)              0.00       3.84 f
+  fa5/fa4/U4/Z (CND2X2)                    0.07       3.91 r
+  fa5/fa4/U1/Z (CND2IX2)                   0.09       4.00 f
+  fa5/fa4/cout2 (full_adder_45)            0.00       4.00 f
+  fa5/cout3 (four_1bit_12)                 0.00       4.00 f
+  fa6/cin (four_1bit_11)                   0.00       4.00 f
+  fa6/fa1/cin (full_adder_44)              0.00       4.00 f
+  fa6/fa1/U7/Z (CND2X2)                    0.07       4.07 r
+  fa6/fa1/U2/Z (CND2IX2)                   0.09       4.17 f
+  fa6/fa1/cout2 (full_adder_44)            0.00       4.17 f
+  fa6/fa2/cin (full_adder_43)              0.00       4.17 f
+  fa6/fa2/U7/Z (CND2X2)                    0.07       4.24 r
+  fa6/fa2/U2/Z (CND2IX2)                   0.09       4.33 f
+  fa6/fa2/cout2 (full_adder_43)            0.00       4.33 f
+  fa6/fa3/cin (full_adder_42)              0.00       4.33 f
+  fa6/fa3/U5/Z (CND2IX2)                   0.07       4.40 r
+  fa6/fa3/U8/Z (CND2X2)                    0.10       4.50 f
+  fa6/fa3/cout2 (full_adder_42)            0.00       4.50 f
+  fa6/fa4/cin (full_adder_41)              0.00       4.50 f
+  fa6/fa4/U7/Z (CND2IX2)                   0.07       4.57 r
+  fa6/fa4/U5/Z (CND2IX2)                   0.09       4.67 f
+  fa6/fa4/cout2 (full_adder_41)            0.00       4.67 f
+  fa6/cout3 (four_1bit_11)                 0.00       4.67 f
+  fa7/cin (four_1bit_10)                   0.00       4.67 f
+  fa7/fa1/cin (full_adder_40)              0.00       4.67 f
+  fa7/fa1/U5/Z (CND2IX2)                   0.07       4.74 r
+  fa7/fa1/U7/Z (CND2IX2)                   0.09       4.83 f
+  fa7/fa1/cout2 (full_adder_40)            0.00       4.83 f
+  fa7/fa2/cin (full_adder_39)              0.00       4.83 f
+  fa7/fa2/U7/Z (CND2IX2)                   0.07       4.90 r
+  fa7/fa2/U2/Z (CND2IX2)                   0.09       5.00 f
+  fa7/fa2/cout2 (full_adder_39)            0.00       5.00 f
+  fa7/fa3/cin (full_adder_38)              0.00       5.00 f
+  fa7/fa3/U5/Z (CND2IX2)                   0.07       5.07 r
+  fa7/fa3/U7/Z (CND2IX2)                   0.09       5.16 f
+  fa7/fa3/cout2 (full_adder_38)            0.00       5.16 f
+  fa7/fa4/cin (full_adder_37)              0.00       5.16 f
+  fa7/fa4/U5/Z (CND2IX2)                   0.07       5.24 r
+  fa7/fa4/U7/Z (CND2IX2)                   0.09       5.33 f
+  fa7/fa4/cout2 (full_adder_37)            0.00       5.33 f
+  fa7/cout3 (four_1bit_10)                 0.00       5.33 f
+  fa8/cin (four_1bit_9)                    0.00       5.33 f
+  fa8/fa1/cin (full_adder_36)              0.00       5.33 f
+  fa8/fa1/U5/Z (CND2IX2)                   0.07       5.40 r
+  fa8/fa1/U8/Z (CND2X2)                    0.10       5.50 f
+  fa8/fa1/cout2 (full_adder_36)            0.00       5.50 f
+  fa8/fa2/cin (full_adder_35)              0.00       5.50 f
+  fa8/fa2/U2/Z (CND2X2)                    0.07       5.57 r
+  fa8/fa2/U4/Z (CND2X2)                    0.10       5.67 f
+  fa8/fa2/cout2 (full_adder_35)            0.00       5.67 f
+  fa8/fa3/cin (full_adder_34)              0.00       5.67 f
+  fa8/fa3/U4/Z (CND2X2)                    0.07       5.74 r
+  fa8/fa3/U5/Z (CND2X2)                    0.10       5.83 f
+  fa8/fa3/cout2 (full_adder_34)            0.00       5.83 f
+  fa8/fa4/cin (full_adder_33)              0.00       5.83 f
+  fa8/fa4/U7/Z (CND2X2)                    0.07       5.91 r
+  fa8/fa4/U5/Z (CND2IX2)                   0.09       6.00 f
+  fa8/fa4/cout2 (full_adder_33)            0.00       6.00 f
+  fa8/cout3 (four_1bit_9)                  0.00       6.00 f
+  fa9/cin (four_1bit_8)                    0.00       6.00 f
+  fa9/fa1/cin (full_adder_32)              0.00       6.00 f
+  fa9/fa1/U4/Z (CND2X2)                    0.07       6.07 r
+  fa9/fa1/U1/Z (CND2IX2)                   0.09       6.17 f
+  fa9/fa1/cout2 (full_adder_32)            0.00       6.17 f
+  fa9/fa2/cin (full_adder_31)              0.00       6.17 f
+  fa9/fa2/U5/Z (CND2X2)                    0.07       6.24 r
+  fa9/fa2/U2/Z (CND2IX2)                   0.09       6.33 f
+  fa9/fa2/cout2 (full_adder_31)            0.00       6.33 f
+  fa9/fa3/cin (full_adder_30)              0.00       6.33 f
+  fa9/fa3/U6/Z (CND2X2)                    0.07       6.40 r
+  fa9/fa3/U7/Z (CND2X2)                    0.10       6.50 f
+  fa9/fa3/cout2 (full_adder_30)            0.00       6.50 f
+  fa9/fa4/cin (full_adder_29)              0.00       6.50 f
+  fa9/fa4/U5/Z (CND2IX2)                   0.07       6.57 r
+  fa9/fa4/U7/Z (CND2IX2)                   0.09       6.66 f
+  fa9/fa4/cout2 (full_adder_29)            0.00       6.66 f
+  fa9/cout3 (four_1bit_8)                  0.00       6.66 f
+  fa10/cin (four_1bit_7)                   0.00       6.66 f
+  fa10/fa1/cin (full_adder_28)             0.00       6.66 f
+  fa10/fa1/U7/Z (CND2IX2)                  0.07       6.74 r
+  fa10/fa1/U2/Z (CND2IX2)                  0.09       6.83 f
+  fa10/fa1/cout2 (full_adder_28)           0.00       6.83 f
+  fa10/fa2/cin (full_adder_27)             0.00       6.83 f
+  fa10/fa2/U7/Z (CND2IX2)                  0.07       6.90 r
+  fa10/fa2/U5/Z (CND2IX2)                  0.09       7.00 f
+  fa10/fa2/cout2 (full_adder_27)           0.00       7.00 f
+  fa10/fa3/cin (full_adder_26)             0.00       7.00 f
+  fa10/fa3/U7/Z (CND2X2)                   0.07       7.07 r
+  fa10/fa3/U5/Z (CND2IX2)                  0.09       7.16 f
+  fa10/fa3/cout2 (full_adder_26)           0.00       7.16 f
+  fa10/fa4/cin (full_adder_25)             0.00       7.16 f
+  fa10/fa4/U5/Z (CND2IX2)                  0.07       7.23 r
+  fa10/fa4/U7/Z (CND2IX2)                  0.09       7.33 f
+  fa10/fa4/cout2 (full_adder_25)           0.00       7.33 f
+  fa10/cout3 (four_1bit_7)                 0.00       7.33 f
+  fa11/cin (four_1bit_6)                   0.00       7.33 f
+  fa11/fa1/cin (full_adder_24)             0.00       7.33 f
+  fa11/fa1/U7/Z (CND2X2)                   0.07       7.40 r
+  fa11/fa1/U5/Z (CND2IX2)                  0.09       7.49 f
+  fa11/fa1/cout2 (full_adder_24)           0.00       7.49 f
+  fa11/fa2/cin (full_adder_23)             0.00       7.49 f
+  fa11/fa2/U7/Z (CND2X2)                   0.07       7.57 r
+  fa11/fa2/U2/Z (CND2IX2)                  0.09       7.66 f
+  fa11/fa2/cout2 (full_adder_23)           0.00       7.66 f
+  fa11/fa3/cin (full_adder_22)             0.00       7.66 f
+  fa11/fa3/U4/Z (CND2X2)                   0.07       7.73 r
+  fa11/fa3/U1/Z (CND2IX2)                  0.09       7.83 f
+  fa11/fa3/cout2 (full_adder_22)           0.00       7.83 f
+  fa11/fa4/cin (full_adder_21)             0.00       7.83 f
+  fa11/fa4/U5/Z (CND2X2)                   0.07       7.90 r
+  fa11/fa4/U1/Z (CND2IX2)                  0.09       7.99 f
+  fa11/fa4/cout2 (full_adder_21)           0.00       7.99 f
+  fa11/cout3 (four_1bit_6)                 0.00       7.99 f
+  fa12/cin (four_1bit_5)                   0.00       7.99 f
+  fa12/fa1/cin (full_adder_20)             0.00       7.99 f
+  fa12/fa1/U7/Z (CND2X2)                   0.07       8.06 r
+  fa12/fa1/U5/Z (CND2IX2)                  0.09       8.16 f
+  fa12/fa1/cout2 (full_adder_20)           0.00       8.16 f
+  fa12/fa2/cin (full_adder_19)             0.00       8.16 f
+  fa12/fa2/U7/Z (CND2X2)                   0.07       8.23 r
+  fa12/fa2/U2/Z (CND2IX2)                  0.09       8.32 f
+  fa12/fa2/cout2 (full_adder_19)           0.00       8.32 f
+  fa12/fa3/cin (full_adder_18)             0.00       8.32 f
+  fa12/fa3/U7/Z (CND2X2)                   0.07       8.39 r
+  fa12/fa3/U5/Z (CND2IX2)                  0.09       8.49 f
+  fa12/fa3/cout2 (full_adder_18)           0.00       8.49 f
+  fa12/fa4/cin (full_adder_17)             0.00       8.49 f
+  fa12/fa4/U2/Z (CND2X2)                   0.07       8.56 r
+  fa12/fa4/U4/Z (CND2X2)                   0.10       8.66 f
+  fa12/fa4/cout2 (full_adder_17)           0.00       8.66 f
+  fa12/cout3 (four_1bit_5)                 0.00       8.66 f
+  fa13/cin (four_1bit_4)                   0.00       8.66 f
+  fa13/fa1/cin (full_adder_16)             0.00       8.66 f
+  fa13/fa1/U7/Z (CND2IX2)                  0.07       8.73 r
+  fa13/fa1/U5/Z (CND2IX2)                  0.09       8.82 f
+  fa13/fa1/cout2 (full_adder_16)           0.00       8.82 f
+  fa13/fa2/cin (full_adder_15)             0.00       8.82 f
+  fa13/fa2/U4/Z (CND2X2)                   0.07       8.89 r
+  fa13/fa2/U1/Z (CND2IX2)                  0.09       8.99 f
+  fa13/fa2/cout2 (full_adder_15)           0.00       8.99 f
+  fa13/fa3/cin (full_adder_14)             0.00       8.99 f
+  fa13/fa3/U7/Z (CND2X2)                   0.07       9.06 r
+  fa13/fa3/U5/Z (CND2IX2)                  0.09       9.15 f
+  fa13/fa3/cout2 (full_adder_14)           0.00       9.15 f
+  fa13/fa4/cin (full_adder_13)             0.00       9.15 f
+  fa13/fa4/U7/Z (CND2X2)                   0.07       9.23 r
+  fa13/fa4/U5/Z (CND2IX2)                  0.09       9.32 f
+  fa13/fa4/cout2 (full_adder_13)           0.00       9.32 f
+  fa13/cout3 (four_1bit_4)                 0.00       9.32 f
+  fa14/cin (four_1bit_3)                   0.00       9.32 f
+  fa14/fa1/cin (full_adder_12)             0.00       9.32 f
+  fa14/fa1/U5/Z (CND2X2)                   0.07       9.39 r
+  fa14/fa1/U2/Z (CND2IX2)                  0.09       9.49 f
+  fa14/fa1/cout2 (full_adder_12)           0.00       9.49 f
+  fa14/fa2/cin (full_adder_11)             0.00       9.49 f
+  fa14/fa2/U7/Z (CND2X2)                   0.07       9.56 r
+  fa14/fa2/U5/Z (CND2IX2)                  0.09       9.65 f
+  fa14/fa2/cout2 (full_adder_11)           0.00       9.65 f
+  fa14/fa3/cin (full_adder_10)             0.00       9.65 f
+  fa14/fa3/U5/Z (CND2IX2)                  0.07       9.72 r
+  fa14/fa3/U8/Z (CND2X2)                   0.10       9.82 f
+  fa14/fa3/cout2 (full_adder_10)           0.00       9.82 f
+  fa14/fa4/cin (full_adder_9)              0.00       9.82 f
+  fa14/fa4/U5/Z (CND2IX2)                  0.07       9.89 r
+  fa14/fa4/U6/Z (CND2IX2)                  0.09       9.99 f
+  fa14/fa4/cout2 (full_adder_9)            0.00       9.99 f
+  fa14/cout3 (four_1bit_3)                 0.00       9.99 f
+  fa15/cin (four_1bit_2)                   0.00       9.99 f
+  fa15/fa1/cin (full_adder_8)              0.00       9.99 f
+  fa15/fa1/U5/Z (CND2X2)                   0.07      10.06 r
+  fa15/fa1/U2/Z (CND2IX2)                  0.09      10.15 f
+  fa15/fa1/cout2 (full_adder_8)            0.00      10.15 f
+  fa15/fa2/cin (full_adder_7)              0.00      10.15 f
+  fa15/fa2/U1/Z (CDLY1XL)                  0.64      10.79 f
+  fa15/fa2/U2/Z (CIVXL)                    0.15      10.94 r
+  fa15/fa2/U4/Z (CIVX2)                    0.08      11.03 f
+  fa15/fa2/U8/Z (CEOXL)                    0.33      11.36 f
+  fa15/fa2/sum2 (full_adder_7)             0.00      11.36 f
+  fa15/sum3[1] (four_1bit_2)               0.00      11.36 f
+  sum_reg[57]/D (CFD2QXL)                  0.00      11.36 f
+  data arrival time                                  11.36
+
+  clock clock (rise edge)                 12.04      12.04
+  clock network delay (propagated)         0.00      12.04
+  clock uncertainty                       -0.25      11.79
+  sum_reg[57]/CP (CFD2QXL)                 0.00      11.79 r
+  library setup time                      -0.37      11.42
+  data required time                                 11.42
+  -----------------------------------------------------------
+  data required time                                 11.42
+  data arrival time                                 -11.36
+  -----------------------------------------------------------
+  slack (MET)                                         0.06
+
+
+1
+set_max_area 2000
+
+1
+report_area
+
+ 
+****************************************
+Report : area
+Design : rca_64bit
+Version: C-2009.06-SP5
+Date   : Sat Dec  5 01:19:21 2015
+****************************************
+
+Library(s) Used:
+
+    tc240c (File: /apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_WCCOM25)
+
+Number of ports:              195
+Number of nets:               660
+Number of cells:              465
+Number of references:          23
+
+Combinational area:       1687.000000
+Noncombinational area:    1225.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:          2912.000000
+Total area:                 undefined
+1
+report_power
+
+Loading db file '/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_BCCOM25'
+Loading db file '/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_WCCOM25'
+Warning: Main library 'tc240c' does not specify the following unit required for power: 'Leakage Power'. (PWR-424)
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : rca_64bit
+Version: C-2009.06-SP5
+Date   : Sat Dec  5 01:19:22 2015
+****************************************
+
+
+Library(s) Used:
+
+    tc240c (File: /apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_WCCOM25)
+
+
+Operating Conditions: WCCOM25   Library: tc240c
+Wire Load Model Mode: top
+
+
+Global Operating Voltage = 2.3  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = Unitless
+
+
+  Cell Internal Power  =   7.5710 mW   (95%)
+  Net Switching Power  = 424.2357 uW    (5%)
+                         ---------
+Total Dynamic Power    =   7.9952 mW  (100%)
+
+Cell Leakage Power     =   0.0000 
+
+1
+write -hierarchy -format verilog -output rca_netlist.v
+
+Writing verilog file '/home/va/vash8900/Desktop/final_project/rca_main/pre_synthesis/rca_netlist.v'.
+1
+report_qor
+
+ 
+****************************************
+Report : qor
+Design : rca_64bit
+Version: C-2009.06-SP5
+Date   : Sat Dec  5 01:19:23 2015
+****************************************
+
+
+  Timing Path Group 'clock'
+  -----------------------------------
+  Levels of Logic:             128.00
+  Critical Path Length:         11.48
+  Critical Path Slack:           0.00
+  Critical Path Clk Period:     12.04
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+
+  Cell Count
+  -----------------------------------
+  Hierarchical Cell Count:         80
+  Hierarchical Port Count:        542
+  Leaf Cell Count:                968
+  Buf/Inv Cell Count:             458
+  CT Buf/Inv Cell Count:            0
+  -----------------------------------
+
+
+  Area
+  -----------------------------------
+  Combinational Area:     1687.000000
+  Noncombinational Area:  1225.000000
+  Net Area:                  0.000000
+  -----------------------------------
+  Cell Area:              2912.000000
+  Design Area:            2912.000000
+
+
+  Design Rules
+  -----------------------------------
+  Total Number of Nets:          1099
+  Nets With Violations:             0
+  -----------------------------------
+
+
+  Hostname: eecad7.engr.sjsu.edu
+
+  Compile CPU Statistics
+  -----------------------------------
+  Resource Sharing:              0.00
+  Logic Optimization:            0.19
+  Mapping Optimization:          6.42
+  -----------------------------------
+  Overall Compile Time:          8.29
+
+1
+quit
+
+
+Thank you...
